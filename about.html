@@ -27,7 +27,6 @@ body {
 a { color: inherit; text-decoration: none; }
 
 /* NAV */
-
 .nav {
   position: sticky;
   top: 0;
@@ -62,7 +61,6 @@ a { color: inherit; text-decoration: none; }
 .nav-links a:hover { color: var(--text); }
 
 /* SECTIONS */
-
 .section {
   max-width: 1120px;
   margin: auto;
@@ -78,7 +76,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* INTRO */
-
 .intro {
   max-width: 760px;
   font-size: 0.95rem;
@@ -87,7 +84,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ICON GRID */
-
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -118,26 +114,26 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
-/* JOURNEY MAP */
-
+/* ENHANCED JOURNEY MAP */
 .journey-map {
   display: flex;
   justify-content: space-between;
   position: relative;
   margin-top: 3rem;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
 .journey-map::before {
   content: "";
   position: absolute;
   top: 50%;
-  left: 5%;
-  right: 5%;
-  height: 2px;
-  background: #d0d0d0;
+  left: 8%;
+  right: 8%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d0d0d0, #d0d0d0, transparent);
   transform: translateY(-50%);
   z-index: 0;
+  border-radius: 2px;
 }
 
 .journey-step {
@@ -145,38 +141,61 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   flex: 1;
   z-index: 1;
+  background: rgba(255,255,255,0.9);
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid rgba(224,224,224,0.6);
+}
+
+.journey-step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  border-color: rgba(102,102,102,0.3);
+}
+
+.journey-step .year {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
 }
 
 .journey-step .circle {
-  width: 20px;
-  height: 20px;
-  background: var(--card);
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
   border-radius: 50%;
-  margin: 0 auto;
-  border: 2px solid #d0d0d0;
-  transition: transform 0.3s ease, background 0.3s ease;
+  margin: 0 auto 1.25rem;
+  border: 3px solid #d0d0d0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
 }
 
 .journey-step:hover .circle {
-  transform: scale(1.2);
-  background: var(--muted);
+  transform: scale(1.15);
+  background: linear-gradient(135deg, var(--text), var(--muted));
+  border-color: var(--muted);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
 .journey-step h3 {
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
   color: var(--text);
+  letter-spacing: -0.01em;
 }
 
 .journey-step p {
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  line-height: 1.55;
   color: var(--muted);
-  margin-top: 0.25rem;
 }
 
 /* FOOTER */
-
 footer {
   padding: 1.5rem;
   font-size: 0.8rem;
@@ -194,7 +213,6 @@ footer {
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 900px) {
   .icon-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
@@ -203,8 +221,13 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
-  .journey-map::before { display: none; }
-  .journey-step { margin-bottom: 2rem; }
+  .journey-map::before { 
+    display: none; 
+  }
+  .journey-step { 
+    margin-bottom: 2rem; 
+    max-width: 400px;
+  }
 }
 </style>
 </head>
@@ -285,35 +308,41 @@ footer {
   </div>
 </section>
 
-<!-- JOURNEY MAP -->
+<!-- ENHANCED JOURNEY MAP -->
 <section class="section">
   <div class="section-title">Our Journey</div>
 
   <div class="journey-map">
     <div class="journey-step">
+      <div class="year">2022</div>
       <div class="circle"></div>
-      <h3>Origins in Commodities</h3>
+      <h3>Digital Commodities</h3>
       <p>
-        Started trading commodities with a focus on liquidity
-        and disciplined risk.
+        Pioneered programmatic trading in digital commodities,
+        establishing foundational frameworks for liquidity provision
+        and volatility management.
       </p>
     </div>
 
     <div class="journey-step">
+      <div class="year">2024</div>
       <div class="circle"></div>
-      <h3>Systematic Expansion</h3>
+      <h3>Asset Class Expansion</h3>
       <p>
-        Expanded into multiple segments applying systematic
-        principles across markets.
+        Extended systematic strategies across equities, fixed income,
+        and derivatives markets, leveraging proprietary research
+        infrastructure.
       </p>
     </div>
 
     <div class="journey-step">
+      <div class="year">2026</div>
       <div class="circle"></div>
-      <h3>Multi-Asset Quant Platform</h3>
+      <h3>Multi-Segment Leadership</h3>
       <p>
-        Today, a multi-asset quantitative platform, continuously
-        evolving with technology and market structure.
+        Established institutional presence across Indian exchanges,
+        deploying sophisticated multi-asset quantitative platforms
+        with adaptive market intelligence.
       </p>
     </div>
   </div>
