@@ -8,203 +8,314 @@
 <style>
 :root {
   --bg: #fff;
-  --card: #f5f5f5;
-  --border: #e0e0e0;
-  --text: #111;
-  --muted: #666;
-  --font: system-ui, -apple-system, BlinkMacSystemFont,
-          "SF Pro Text", "Segoe UI", sans-serif;
+  --bg-elevated: #fafafa;
+  --card: #f8f9fa;
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+  --text: #111827;
+  --text-strong: #0f172a;
+  --muted: #6b7280;
+  --accent: #3b82f6;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --radius: 0.75rem;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: var(--font);
-  background: radial-gradient(circle at top, #fff 0%, #f7f7f7 65%);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
   color: var(--text);
+  line-height: 1.6;
 }
 
-a { color: inherit; text-decoration: none; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 /* NAV */
-
 .nav {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(14px);
+  z-index: 50;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
 }
 
 .nav-inner {
-  max-width: 1120px;
+  max-width: 1152px;
   margin: auto;
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 0.95rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, var(--text-strong), var(--muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.75rem;
-  font-size: 0.85rem;
-  color: var(--muted);
+  gap: 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
-.nav-links a:hover { color: var(--text); }
+.nav-links a {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover { 
+  color: var(--text-strong); 
+}
 
 /* SECTIONS */
-
 .section {
-  max-width: 1120px;
+  max-width: 1152px;
   margin: auto;
-  padding: 3.5rem 1.5rem;
+  padding: 4rem 2rem;
 }
 
 .section-title {
-  font-size: 0.85rem;
-  letter-spacing: 0.18em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 /* INTRO */
-
 .intro {
-  max-width: 760px;
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: var(--muted);
+  max-width: 800px;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text);
+  background: rgba(255,255,255,0.7);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  margin-bottom: 3rem;
 }
 
-/* ICON GRID */
-
-.icon-grid {
+/* PROCESS GRID */
+.process-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
-.icon-item {
+.process-card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
   text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+.process-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 0.75rem;
-  stroke: var(--text);
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  stroke: var(--accent);
+  stroke-width: 1.75;
+  fill: none;
   opacity: 0.9;
 }
 
-.icon-title {
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
+.process-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-strong);
 }
 
-.icon-text {
-  font-size: 0.85rem;
-  line-height: 1.6;
+.process-text {
+  font-size: 0.95rem;
   color: var(--muted);
+  line-height: 1.65;
 }
 
-/* JOURNEY MAP */
-
-.journey-map {
-  display: flex;
-  justify-content: space-between;
+/* JOURNEY TIMELINE */
+.journey-timeline {
   position: relative;
   margin-top: 3rem;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
-.journey-map::before {
-  content: "";
+.timeline-line {
   position: absolute;
   top: 50%;
-  left: 5%;
-  right: 5%;
-  height: 2px;
-  background: #d0d0d0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--border-strong) 20%, var(--border-strong) 80%, transparent 100%);
   transform: translateY(-50%);
-  z-index: 0;
-}
-
-.journey-step {
-  position: relative;
-  text-align: center;
-  flex: 1;
   z-index: 1;
 }
 
-.journey-step .circle {
-  width: 20px;
-  height: 20px;
-  background: var(--card);
-  border-radius: 50%;
-  margin: 0 auto;
-  border: 2px solid #d0d0d0;
-  transition: transform 0.3s ease, background 0.3s ease;
+.journey-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  gap: 2rem;
 }
 
-.journey-step:hover .circle {
-  transform: scale(1.2);
-  background: var(--muted);
+.journey-step {
+  flex: 1;
+  text-align: center;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.journey-step:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.journey-circle {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--accent), #60a5fa);
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgb(59 130 246 / 0.4);
 }
 
 .journey-step h3 {
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-  color: var(--text);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-strong);
 }
 
 .journey-step p {
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.95rem;
   color: var(--muted);
-  margin-top: 0.25rem;
+  line-height: 1.65;
 }
 
 /* FOOTER */
-
 footer {
-  padding: 1.5rem;
-  font-size: 0.8rem;
-  color: var(--muted);
+  background: var(--bg-elevated);
   border-top: 1px solid var(--border);
+  padding: 2.5rem 0;
+  margin-top: 4rem;
 }
 
 .footer-inner {
-  max-width: 1120px;
+  max-width: 1152px;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
+  align-items: center;
+  padding: 0 2rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
 }
 
 /* RESPONSIVE */
-
-@media (max-width: 900px) {
-  .icon-grid { grid-template-columns: 1fr 1fr; }
-  .nav-links { display: none; }
-
-  .journey-map {
+@media (max-width: 1024px) {
+  .journey-steps {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
-  .journey-map::before { display: none; }
-  .journey-step { margin-bottom: 2rem; }
+  
+  .timeline-line {
+    display: none;
+  }
+  
+  .journey-step {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-inner,
+  .section,
+  .footer-inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .nav-links {
+    gap: 1.25rem;
+  }
+  
+  .intro {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .footer-inner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .logo {
+    font-size: 1rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
 }
 </style>
 </head>
@@ -217,104 +328,116 @@ footer {
     <div class="logo">VectorPoint Capital</div>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
+      <a href="about.html">About</a>
       <a href="technology.html">Technology</a>
     </div>
   </div>
 </nav>
 
-<!-- ABOUT -->
+<!-- ABOUT INTRO -->
 <section class="section">
-  <div class="section-title">About Us</div>
+  <div class="section-title">About VectorPoint Capital</div>
   <p class="intro">
     VectorPoint Capital is a quantitative proprietary trading firm
     focused on systematic strategies across global financial markets.
     We design and deploy algorithmic trading systems grounded in
-    data, mathematics, and disciplined risk management.
+    data, mathematics, and disciplined risk management. Our approach
+    emphasizes empirical research, robust infrastructure, and continuous
+    adaptation to evolving market dynamics.
   </p>
 </section>
 
-<!-- THINK BUILD STRATEGIZE TRADE -->
+<!-- PROCESS -->
 <section class="section">
   <div class="section-title">Our Process</div>
 
-  <div class="icon-grid">
-    <div class="icon-item">
-      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-        <path d="M12 3a6 6 0 0 0-3 11v2h6v-2a6 6 0 0 0-3-11z"/>
+  <div class="process-grid">
+    <div class="process-card">
+      <svg class="icon" fill="none" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3a6 6 0 0 0-3 11v2h6v-2a6 6 0 0 0-3-11z"/>
       </svg>
-      <div class="icon-title">Think</div>
-      <div class="icon-text">
-        Identify market inefficiencies through research,
-        debate, and empirical validation.
+      <div class="process-title">Think</div>
+      <div class="process-text">
+        Identify market inefficiencies through rigorous research,
+        interdisciplinary debate, and empirical validation across
+        diverse datasets and timeframes.
       </div>
     </div>
 
-    <div class="icon-item">
-      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-        <path d="M10 6h4v4h-4zM4 10h4v4H4zM16 10h4v4h-4z"/>
+    <div class="process-card">
+      <svg class="icon" fill="none" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6h4v4h-4zM4 10h4v4H4zM16 10h4v4h-4z"/>
       </svg>
-      <div class="icon-title">Build</div>
-      <div class="icon-text">
-        Engineer optimized algorithmic systems
-        with resilient infrastructure.
+      <div class="process-title">Build</div>
+      <div class="process-text">
+        Engineer production-grade algorithmic systems with scalable
+        infrastructure, fault-tolerant execution, and real-time
+        monitoring capabilities.
       </div>
     </div>
 
-    <div class="icon-item">
-      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-        <path d="M3 17l6-6 4 4 7-7"/>
+    <div class="process-card">
+      <svg class="icon" fill="none" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 7-7"/>
       </svg>
-      <div class="icon-title">Strategize</div>
-      <div class="icon-text">
-        Apply advanced mathematical and
-        statistical modeling techniques.
+      <div class="process-title">Strategize</div>
+      <div class="process-text">
+        Leverage advanced statistical modeling, machine learning,
+        and optimization techniques tailored to specific market
+        microstructures and regimes.
       </div>
     </div>
 
-    <div class="icon-item">
-      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
+    <div class="process-card">
+      <svg class="icon" fill="none" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
       </svg>
-      <div class="icon-title">Trade</div>
-      <div class="icon-text">
-        Execute systematically across asset
-        classes with real-time controls.
+      <div class="process-title">Trade</div>
+      <div class="process-text">
+        Deploy strategies systematically across asset classes
+        with dynamic position sizing, real-time risk controls,
+        and performance attribution.
       </div>
     </div>
   </div>
 </section>
 
-<!-- JOURNEY MAP -->
+<!-- JOURNEY -->
 <section class="section">
   <div class="section-title">Our Journey</div>
 
-  <div class="journey-map">
-    <div class="journey-step">
-      <div class="circle"></div>
-      <h3>Origins in Commodities</h3>
-      <p>
-        Started trading commodities with a focus on liquidity
-        and disciplined risk.
-      </p>
-    </div>
+  <div class="journey-timeline">
+    <div class="timeline-line"></div>
+    <div class="journey-steps">
+      <div class="journey-step">
+        <div class="journey-circle"></div>
+        <h3>Origins in Commodities</h3>
+        <p>
+          Founded with disciplined trading in commodity markets,
+          emphasizing liquidity provision, volatility dynamics,
+          and robust risk frameworks from inception.
+        </p>
+      </div>
 
-    <div class="journey-step">
-      <div class="circle"></div>
-      <h3>Systematic Expansion</h3>
-      <p>
-        Expanded into multiple segments applying systematic
-        principles across markets.
-      </p>
-    </div>
+      <div class="journey-step">
+        <div class="journey-circle"></div>
+        <h3>Systematic Expansion</h3>
+        <p>
+          Scaled systematic principles across equities, FX,
+          and derivatives while maintaining research-led
+          strategy development and infrastructure evolution.
+        </p>
+      </div>
 
-    <div class="journey-step">
-      <div class="circle"></div>
-      <h3>Multi-Asset Quant Platform</h3>
-      <p>
-        Today, a multi-asset quantitative platform, continuously
-        evolving with technology and market structure.
-      </p>
+      <div class="journey-step">
+        <div class="journey-circle"></div>
+        <h3>Multi-Asset Platform</h3>
+        <p>
+          Evolved into a sophisticated multi-asset quantitative
+          platform, integrating cutting-edge technology with
+          adaptive research to navigate complex market structures.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -322,8 +445,12 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div>© VectorPoint Capital Markets LLP</div>
-    <div>Legal · Privacy · Recruiting</div>
+    <div>© 2026 VectorPoint Capital Markets LLP</div>
+    <div class="footer-links">
+      <a href="#">Legal</a>
+      <a href="#">Privacy</a>
+      <a href="#">Recruiting</a>
+    </div>
   </div>
 </footer>
 
