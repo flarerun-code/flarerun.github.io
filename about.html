@@ -92,6 +92,7 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .icon-item {
@@ -117,35 +118,60 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
-/* JOURNEY */
+/* JOURNEY MAP */
 
-.journey {
-  display: grid;
-  gap: 1.5rem;
+.journey-map {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+.journey-map::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: #2a2a2a;
+  transform: translateY(-50%);
+  z-index: 0;
 }
 
 .journey-step {
-  padding: 1.25rem 1.5rem;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: linear-gradient(to right, #0b0b0b, #050505);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  text-align: center;
+  flex: 1;
+  z-index: 1;
 }
 
-.journey-step:hover {
-  transform: translateY(-2px);
-  border-color: #2a2a2a;
+.journey-step .circle {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 2px solid #2a2a2a;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.journey-step:hover .circle {
+  transform: scale(1.2);
+  background: #f5f5f5;
 }
 
 .journey-step h3 {
   font-size: 0.9rem;
-  margin-bottom: 0.35rem;
+  margin-top: 0.5rem;
 }
 
 .journey-step p {
   font-size: 0.85rem;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--muted);
+  margin-top: 0.25rem;
 }
 
 /* FOOTER */
@@ -166,9 +192,18 @@ footer {
   gap: 1rem;
 }
 
+/* RESPONSIVE */
+
 @media (max-width: 900px) {
   .icon-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
+
+  .journey-map {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .journey-map::before { display: none; }
+  .journey-step { margin-bottom: 2rem; }
 }
 </style>
 </head>
@@ -250,35 +285,35 @@ footer {
   </div>
 </section>
 
-<!-- JOURNEY -->
+<!-- JOURNEY MAP -->
 <section class="section">
   <div class="section-title">Our Journey</div>
 
-  <div class="journey">
+  <div class="journey-map">
     <div class="journey-step">
+      <div class="circle"></div>
       <h3>Origins in Commodities</h3>
       <p>
-        Our journey began in commodity markets, where liquidity,
-        structure, and volatility demanded disciplined execution
-        and robust risk management.
+        Started trading commodities with a focus on liquidity
+        and disciplined risk.
       </p>
     </div>
 
     <div class="journey-step">
+      <div class="circle"></div>
       <h3>Systematic Expansion</h3>
       <p>
-        As our research capabilities matured, we expanded into
-        additional market segments, applying the same systematic
-        principles across instruments and regimes.
+        Expanded into multiple segments applying systematic
+        principles across markets.
       </p>
     </div>
 
     <div class="journey-step">
+      <div class="circle"></div>
       <h3>Multi-Asset Quant Platform</h3>
       <p>
-        Today, VectorPoint Capital operates as a multi-asset
-        quantitative trading platform, continuously evolving
-        with market structure and technology.
+        Today, a multi-asset quantitative platform, continuously
+        evolving with technology and market structure.
       </p>
     </div>
   </div>
