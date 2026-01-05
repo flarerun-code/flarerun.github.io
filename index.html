@@ -158,6 +158,32 @@
       margin-bottom: 1.5rem;
     }
 
+    .hero-actions {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      background: linear-gradient(145deg, #fff, #bdbdbd);
+      color: #000;
+      border: 1px solid #fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .btn-secondary {
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid #444;
+      background: #0d0d0d;
+      color: #bdbdbd;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+
     /* ================= CARDS ================= */
 
     .grid-3 {
@@ -250,14 +276,121 @@
 <body>
 <div class="page">
 
-  <!-- CONTENT ABOVE OMITTED FOR BREVITY (UNCHANGED) -->
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <div class="logo-mark"></div>
+        <div>
+          <div class="logo-primary">VectorPoint</div>
+          <div class="logo-secondary">Capital Markets</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#technology" class="nav-link">Technology</a>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="section hero">
+    <div>
+      <span class="pill">Global Liquidity</span>
+      <span class="pill">Systematic Trading</span>
+
+      <h1 class="hero-title">
+        A capital markets firm built at the intersection of
+        research, code, and risk.
+      </h1>
+
+      <p class="hero-subtitle">
+        VectorPoint Capital is a quantitative trading firm providing
+        consistent liquidity across global derivatives and cash markets.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="#about">About Us</a>
+        <a class="btn-secondary" href="#technology">Technology</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-label">Technology</div>
+        <div class="card-title">Low-latency trading systems</div>
+        <div class="card-body">
+          Production-grade infrastructure engineered for speed,
+          resilience, and deterministic execution.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Quantitative Research</div>
+        <div class="card-title">Data-driven decision making</div>
+        <div class="card-body">
+          Statistical modeling, simulation, and continuous validation
+          across market regimes.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Risk and Control</div>
+        <div class="card-title">Capital protection first</div>
+        <div class="card-body">
+          Real-time risk monitoring, automated controls, and strict
+          exposure limits embedded in every strategy.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="section" id="technology">
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-label">Stack</div>
+        <div class="card-title">Research to production</div>
+        <div class="card-body">
+          A unified framework powering backtests, simulations,
+          and live trading.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Tooling</div>
+        <div class="card-title">Real-time visibility</div>
+        <div class="card-body">
+          Custom dashboards and monitoring tools for expert users.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Infrastructure</div>
+        <div class="card-title">Low-latency, reliable</div>
+        <div class="card-body">
+          Redundant systems engineered for performance and resilience.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Get in touch</h2>
+    <p class="hero-subtitle">
+      For trading inquiries, partnerships, or recruitment,
+      reach out to the team.
+    </p>
+  </section>
 
   <!-- PUZZLE -->
   <section class="puzzle">
     <div class="puzzle-title">A Daily Puzzle</div>
     <div class="puzzle-text">
-      Solving market dynamics daily — transforming uncertainty into
-      structured, repeatable decisions.
+      Solving market dynamics daily — transforming uncertainty
+      into structured, repeatable decisions.
     </div>
   </section>
 
