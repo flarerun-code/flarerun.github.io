@@ -4,19 +4,23 @@
   <meta charset="UTF-8" />
   <title>VectorPoint Capital</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
     :root {
-      --bg: #050816;
-      --bg-elevated: #0b1020;
-      --accent: #ff6b35;
-      --accent-soft: rgba(255, 107, 53, 0.16);
-      --text-main: #f5f7fb;
-      --text-muted: #9aa4c6;
-      --border-subtle: #252b3f;
-      --card-bg: #0f172a;
-      --pill-bg: #111827;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
+      --bg: #000;
+      --bg-elevated: #0a0a0a;
+      --accent: #ffffff;
+      --accent-soft: rgba(255, 255, 255, 0.08);
+
+      --text-main: #f5f5f5;
+      --text-muted: #9a9a9a;
+
+      --border-subtle: #1f1f1f;
+      --card-bg: #0b0b0b;
+      --pill-bg: #0f0f0f;
+
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont,
+        "SF Pro Text", "Segoe UI", sans-serif;
     }
 
     * {
@@ -26,9 +30,8 @@
     }
 
     body {
-      margin: 0;
       font-family: var(--font-sans);
-      background: radial-gradient(circle at top, #111827 0, #020617 52%, #000 100%);
+      background: radial-gradient(circle at top, #111 0%, #000 65%);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
@@ -42,27 +45,16 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: linear-gradient(
-        145deg,
-        #020617 0%,
-        #020617 45%,
-        #050816 60%,
-        #000 100%
-      );
     }
 
-    /* Top navigation */
+    /* ================= NAV ================= */
 
     .nav {
       position: sticky;
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: linear-gradient(
-        to bottom,
-        rgba(2, 6, 23, 0.92),
-        rgba(15, 23, 42, 0.92)
-      );
+      background: rgba(0, 0, 0, 0.9);
       border-bottom: 1px solid var(--border-subtle);
     }
 
@@ -71,1176 +63,307 @@
       margin: 0 auto;
       padding: 1rem 1.5rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
+      align-items: center;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.75rem;
     }
 
     .logo-mark {
       width: 28px;
       height: 28px;
       border-radius: 999px;
-      background:
-        radial-gradient(circle at 30% 20%, #f97316 0, transparent 45%),
-        radial-gradient(circle at 70% 80%, #22d3ee 0, transparent 52%),
-        radial-gradient(circle at 50% 50%, #1d4ed8 0, transparent 60%);
-      box-shadow:
-        0 0 0 1px rgba(148, 163, 184, 0.3),
-        0 0 24px rgba(56, 189, 248, 0.45);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .logo-mark::after {
-      content: "";
-      position: absolute;
-      inset: 22%;
-      border-radius: inherit;
-      border: 1px solid rgba(15, 23, 42, 0.7);
-      box-shadow: inset 0 0 18px rgba(15, 23, 42, 0.75);
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      gap: 0.05rem;
+      background: radial-gradient(circle at 30% 20%, #fff 0, #555 45%, #000 75%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.3);
     }
 
     .logo-primary {
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #e5e7eb;
     }
 
     .logo-secondary {
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 1.75rem;
       font-size: 0.85rem;
       color: var(--text-muted);
+      align-items: center;
     }
 
-    .nav-link {
-      position: relative;
-      padding-bottom: 0.15rem;
-    }
-
-    .nav-link span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1.5px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #f97316, #22d3ee);
-      transition: width 160ms ease-out;
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
+    .nav-link:hover {
+      color: #fff;
     }
 
     .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
       padding: 0.55rem 0.9rem;
       border-radius: 999px;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      background: radial-gradient(circle at top left, #fb923c 0, #ea580c 40%, #4c1d95 100%);
-      color: #0b1020;
-      border: 1px solid rgba(251, 146, 60, 0.9);
-      box-shadow:
-        0 0 0 1px rgba(8, 47, 73, 0.4),
-        0 10px 25px rgba(15, 23, 42, 0.9);
-      transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+      background: linear-gradient(145deg, #fff, #cfcfcf);
+      color: #000;
+      border: 1px solid #fff;
     }
 
-    .nav-cta:hover {
-      transform: translateY(-1px);
-      box-shadow:
-        0 0 0 1px rgba(8, 47, 73, 0.7),
-        0 16px 40px rgba(15, 23, 42, 1);
-      background: radial-gradient(circle at top left, #fed7aa 0, #fb923c 40%, #7c2d12 100%);
-    }
-
-    .nav-cta-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #f97316 0, #991b1b 100%);
-      box-shadow:
-        0 0 0 1px rgba(248, 250, 252, 0.9),
-        0 0 12px rgba(248, 250, 252, 0.9);
-    }
-
-    /* Layout */
-
-    .main {
-      flex: 1;
-    }
+    /* ================= SECTIONS ================= */
 
     .section {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 3.25rem;
+      padding: 3rem 1.5rem;
     }
 
-    /* Hero */
+    /* ================= HERO ================= */
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 2.75rem;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 3rem;
       align-items: center;
-    }
-
-    .hero-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.2rem;
     }
 
     .pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
       padding: 0.3rem 0.7rem;
       border-radius: 999px;
-      font-size: 0.72rem;
-      text-transform: uppercase;
+      font-size: 0.7rem;
       letter-spacing: 0.12em;
-      background-color: rgba(15, 23, 42, 0.88);
+      text-transform: uppercase;
+      background: var(--pill-bg);
+      border: 1px solid #333;
       color: var(--text-muted);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-    }
-
-    .pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #22c55e 0, #14532d 95%);
-      box-shadow: 0 0 12px rgba(22, 163, 74, 0.9);
-    }
-
-    .pill-accent {
-      border-color: rgba(251, 146, 60, 0.7);
-      background: rgba(30, 64, 175, 0.65);
-      color: #e5e7eb;
+      margin-right: 0.5rem;
     }
 
     .hero-title {
-      font-size: clamp(2.3rem, 3vw + 1.2rem, 3.1rem);
+      font-size: clamp(2.4rem, 3vw + 1rem, 3.1rem);
       line-height: 1.1;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.8rem;
+      margin: 1rem 0;
     }
 
     .hero-title span {
-      background: linear-gradient(120deg, #e5e7eb, #f97316, #22d3ee);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: #fff;
     }
 
     .hero-subtitle {
-      max-width: 480px;
-      font-size: 0.94rem;
-      color: var(--text-muted);
+      max-width: 460px;
+      font-size: 0.95rem;
       line-height: 1.7;
-      margin-bottom: 1.6rem;
-    }
-
-    .hero-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .metric {
-      padding-right: 1.2rem;
-      border-right: 1px solid rgba(51, 65, 85, 0.9);
-    }
-
-    .metric:last-child {
-      border-right: none;
-      padding-right: 0;
-    }
-
-    .metric-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .metric-value {
-      font-size: 1.1rem;
-      font-weight: 600;
-      display: flex;
-      align-items: baseline;
-      gap: 0.25rem;
-    }
-
-    .metric-tag {
-      font-size: 0.7rem;
-      padding: 0.05rem 0.45rem;
-      border-radius: 999px;
-      background-color: rgba(16, 185, 129, 0.15);
-      color: #6ee7b7;
-      border: 1px solid rgba(16, 185, 129, 0.4);
+      margin-bottom: 1.5rem;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      align-items: center;
+      gap: 0.8rem;
     }
 
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.7rem 1.3rem;
+      padding: 0.7rem 1.4rem;
       border-radius: 999px;
-      font-size: 0.84rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid rgba(59, 130, 246, 0.8);
-      background: radial-gradient(circle at top left, #22d3ee 0, #1d4ed8 50%, #020617 100%);
-      color: #e5e7eb;
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.9),
-        0 16px 40px rgba(15, 23, 42, 1);
-      cursor: pointer;
-      transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow:
-        0 0 0 1px rgba(30, 64, 175, 0.9),
-        0 20px 55px rgba(15, 23, 42, 1);
-      background: radial-gradient(circle at top left, #67e8f9 0, #2563eb 40%, #020617 100%);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.65rem 1rem;
-      border-radius: 999px;
+      background: linear-gradient(145deg, #fff, #bdbdbd);
+      color: #000;
+      border: 1px solid #fff;
       font-size: 0.8rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      background-color: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
     }
 
-    .btn-secondary:hover {
-      background-color: #020617;
-      border-color: rgba(148, 163, 184, 0.75);
-      color: #e5e7eb;
+    .btn-secondary {
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid #444;
+      background: #0d0d0d;
+      color: #bdbdbd;
+      font-size: 0.78rem;
+      text-transform: uppercase;
     }
 
-    .btn-icon {
-      font-size: 1rem;
-      transform: translateY(0.5px);
-    }
-
-    /* Hero right: pseudo "trading UI" */
-
-    .hero-panel {
-      position: relative;
-    }
+    /* ================= PANELS ================= */
 
     .panel-shell {
-      position: relative;
-      background: radial-gradient(circle at top left, #1f2937 0, #020617 55%);
+      background: #0b0b0b;
       border-radius: 18px;
-      padding: 1.1rem 1.1rem 1rem;
-      border: 1px solid rgba(51, 65, 85, 0.9);
-      box-shadow:
-        0 22px 70px rgba(15, 23, 42, 1),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
-      overflow: hidden;
-    }
-
-    .panel-shell::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.18) 0, transparent 55%),
-        radial-gradient(circle at 80% 20%, rgba(251, 146, 60, 0.16) 0, transparent 52%),
-        radial-gradient(circle at 80% 90%, rgba(96, 165, 250, 0.22) 0, transparent 50%);
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
-    .panel-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .panel-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.9rem;
-    }
-
-    .panel-title {
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .panel-tabs {
-      display: flex;
-      gap: 0.35rem;
-      padding: 0.25rem;
-      background-color: rgba(15, 23, 42, 0.84);
-      border-radius: 999px;
-      border: 1px solid rgba(30, 64, 175, 0.8);
-    }
-
-    .panel-tab {
-      font-size: 0.7rem;
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
-      color: var(--text-muted);
-      background: transparent;
-      border: none;
-      cursor: default;
-      white-space: nowrap;
-    }
-
-    .panel-tab.active {
-      background: linear-gradient(120deg, #1d4ed8, #22c55e);
-      color: #e5e7eb;
-      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.98);
-    }
-
-    .panel-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.95fr;
-      gap: 0.9rem;
-      align-items: stretch;
+      border: 1px solid #262626;
+      padding: 1rem;
     }
 
     .panel-card {
-      background-color: rgba(15, 23, 42, 0.97);
+      background: #0b0b0b;
+      border: 1px solid #2a2a2a;
       border-radius: 12px;
-      border: 1px solid rgba(30, 64, 175, 0.7);
-      padding: 0.7rem 0.75rem;
-      backdrop-filter: blur(4px);
+      padding: 0.8rem;
+      margin-bottom: 0.8rem;
     }
 
-    .panel-card-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 0.4rem;
-    }
-
-    .panel-card-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
-    }
-
-    .panel-chip {
-      font-size: 0.7rem;
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      background-color: rgba(15, 23, 42, 1);
-      border: 1px solid rgba(51, 65, 85, 1);
-      color: #cbd5f5;
-    }
-
-    .curve-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.6rem;
-      margin-top: 0.35rem;
-    }
-
-    .curve-label {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-    }
-
-    .curve-value {
-      font-size: 0.9rem;
-    }
-
-    .curve-spark {
-      flex: 1;
-      height: 40px;
-      border-radius: 9px;
-      background:
-        linear-gradient(to top, rgba(15, 23, 42, 1), rgba(15, 23, 42, 0)),
-        repeating-linear-gradient(
-          to right,
-          rgba(30, 64, 175, 0.28),
-          rgba(30, 64, 175, 0.28) 1px,
-          transparent 1px,
-          transparent 8px
-        );
-      overflow: hidden;
-      position: relative;
-    }
-
-    .curve-spark::after {
-      content: "";
-      position: absolute;
-      inset: 5px 4px;
-      background:
-        linear-gradient(
-          130deg,
-          rgba(56, 189, 248, 0.4),
-          rgba(34, 197, 94, 0.1) 40%,
-          rgba(251, 146, 60, 0.4)
-        );
-      clip-path: polygon(
-        0% 75%,
-        10% 55%,
-        20% 62%,
-        30% 40%,
-        40% 45%,
-        50% 30%,
-        60% 42%,
-        70% 20%,
-        80% 32%,
-        90% 18%,
-        100% 25%,
-        100% 100%,
-        0% 100%
-      );
-      mix-blend-mode: screen;
-      opacity: 0.9;
-    }
-
-    .panel-list {
-      margin-top: 0.25rem;
-      border-radius: 9px;
-      background-color: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(30, 64, 175, 0.9);
-      padding: 0.4rem 0.55rem;
-    }
-
-    .panel-row {
-      display: grid;
-      grid-template-columns: 1.4fr 0.9fr 0.9fr;
-      gap: 0.35rem;
-      font-size: 0.76rem;
-      padding: 0.28rem 0;
-      align-items: baseline;
-    }
-
-    .panel-row-header {
-      font-size: 0.70rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      border-bottom: 1px solid rgba(30, 64, 175, 0.8);
-      margin-bottom: 0.1rem;
-    }
-
-    .panel-row-symbol {
-      font-variant-numeric: tabular-nums;
-    }
-
-    .panel-row-dir {
-      color: #22c55e;
-    }
-
-    .panel-row-dir.sell {
-      color: #f97316;
-    }
-
-    .panel-row-pnl {
-      font-variant-numeric: tabular-nums;
-      color: #a5b4fc;
-    }
-
-    .panel-mini {
-      margin-top: 0.5rem;
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .mini-pill {
-      flex: 1;
-      border-radius: 999px;
-      padding: 0.25rem 0.55rem;
-      font-size: 0.70rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(30, 64, 175, 0.85);
-      color: var(--text-muted);
-    }
-
-    .mini-pill strong {
-      font-weight: 500;
-      color: #e5e7eb;
-    }
-
-    .panel-glow {
-      position: absolute;
-      inset: -40px;
-      background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.2) 0, transparent 50%),
-        radial-gradient(circle at 100% 0, rgba(251, 146, 60, 0.22) 0, transparent 55%);
-      opacity: 0.4;
-      mix-blend-mode: screen;
-      pointer-events: none;
-    }
-
-    /* Sections: About, Strategies, Technology, Careers */
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 1.4rem;
-      gap: 1rem;
-    }
-
-    .section-kicker {
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.25rem;
-    }
-
-    .section-title {
-      font-size: 1.2rem;
-      letter-spacing: -0.01em;
-      color: #e5e7eb;
-    }
-
-    .section-summary {
-      max-width: 420px;
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    /* ================= GRID / CARDS ================= */
 
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
     }
 
     .card {
-      background-color: var(--card-bg);
+      background: var(--card-bg);
       border-radius: 14px;
-      border: 1px solid rgba(30, 64, 175, 0.6);
-      padding: 0.9rem 0.9rem 0.85rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-      box-shadow:
-        0 18px 45px rgba(15, 23, 42, 0.95),
-        0 0 0 1px rgba(15, 23, 42, 0.95);
+      border: 1px solid #2a2a2a;
+      padding: 1rem;
     }
 
     .card-label {
       font-size: 0.72rem;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-muted);
     }
 
     .card-title {
-      font-size: 0.98rem;
-      margin-bottom: 0.15rem;
+      font-size: 0.95rem;
+      margin: 0.3rem 0;
     }
 
     .card-body {
-      font-size: 0.86rem;
-      color: var(--text-muted);
+      font-size: 0.85rem;
       line-height: 1.6;
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.38rem;
-      margin-top: 0.55rem;
+      color: var(--text-muted);
     }
 
     .badge {
-      font-size: 0.72rem;
+      display: inline-block;
+      font-size: 0.7rem;
       padding: 0.1rem 0.55rem;
       border-radius: 999px;
-      background-color: var(--pill-bg);
-      border: 1px solid rgba(51, 65, 85, 0.9);
-      color: #cbd5f5;
+      border: 1px solid #333;
+      margin-right: 0.35rem;
+      margin-top: 0.4rem;
+      color: #ddd;
     }
 
-    .badge-soft {
-      background-color: var(--accent-soft);
-      border-color: rgba(248, 250, 252, 0.12);
-      color: #fed7aa;
-    }
-
-    /* Careers section */
-
-    .careers-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .careers-list {
-      border-radius: 14px;
-      background-color: var(--card-bg);
-      border: 1px solid rgba(30, 64, 175, 0.7);
-      padding: 0.85rem 0.9rem;
-    }
-
-    .careers-header-row {
-      display: grid;
-      grid-template-columns: 1.3fr 0.9fr 0.9fr;
-      gap: 0.35rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      border-bottom: 1px solid rgba(30, 64, 175, 0.85);
-      padding-bottom: 0.35rem;
-      margin-bottom: 0.15rem;
-    }
-
-    .role-row {
-      display: grid;
-      grid-template-columns: 1.3fr 0.9fr 0.9fr;
-      gap: 0.35rem;
-      font-size: 0.82rem;
-      padding: 0.32rem 0;
-      border-bottom: 1px dashed rgba(31, 41, 55, 0.9);
-      align-items: baseline;
-    }
-
-    .role-row:last-child {
-      border-bottom: none;
-    }
-
-    .role-title {
-      color: #e5e7eb;
-    }
-
-    .role-meta {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .careers-note {
-      margin-top: 0.65rem;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .careers-side {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .careers-tagline {
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    .careers-pill {
-      font-size: 0.74rem;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      border: 1px dashed rgba(148, 163, 184, 0.5);
-      color: var(--text-muted);
-      background-color: rgba(15, 23, 42, 0.9);
-    }
-
-    /* Footer */
+    /* ================= FOOTER ================= */
 
     .footer {
       border-top: 1px solid var(--border-subtle);
-      margin-top: 1.5rem;
-      padding: 1.3rem 1.5rem 1.8rem;
-      color: var(--text-muted);
+      padding: 1.5rem;
       font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
     .footer-inner {
       max-width: 1120px;
       margin: 0 auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 1rem;
-      flex-wrap: wrap;
     }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-    }
-
-    /* Responsive */
+    /* ================= RESPONSIVE ================= */
 
     @media (max-width: 900px) {
       .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-panel {
-        order: -1;
+        grid-template-columns: 1fr;
       }
       .nav-links {
         display: none;
       }
-    }
-
-    @media (max-width: 720px) {
       .grid-3 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .careers-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .section {
-        padding-inline: 1.2rem;
-      }
-      .nav-inner {
-        padding-inline: 1.2rem;
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <header class="nav">
-      <div class="nav-inner">
-        <div class="nav-left">
-          <div class="logo-mark" aria-hidden="true"></div>
-          <div class="logo-text">
-            <div class="logo-primary">VectorPoint</div>
-            <div class="logo-secondary">Capital Markets</div>
-          </div>
-        </div>
-        <nav class="nav-links">
-          <a href="#about" class="nav-link"><span>Firm</span></a>
-          <a href="#strategies" class="nav-link"><span>Strategies</span></a>
-          <a href="#technology" class="nav-link"><span>Technology</span></a>
-          <a href="#careers" class="nav-link"><span>Careers</span></a>
-          <a href="#contact" class="nav-cta">
-            <span class="nav-cta-dot"></span>
-            <span>Get in touch</span>
-          </a>
-        </nav>
-      </div>
-    </header>
+<div class="page">
 
-    <main class="main">
-      <!-- Hero -->
-      <section class="section hero" id="top">
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <div class="logo-mark"></div>
         <div>
-          <div class="hero-pill-row">
-            <div class="pill">
-              <span class="pill-dot"></span>
-              <span>Global Liquidity</span>
-            </div>
-            <div class="pill pill-accent">
-              <span>Systematic Market Making</span>
-            </div>
-          </div>
-          <h1 class="hero-title">
-            A capital markets firm built at the intersection of <span>research, code, and risk.</span>
-          </h1>
-          <p class="hero-subtitle">
-            VectorPoint Capital is a quantitative trading firm providing deep, consistent liquidity across global derivatives and cash markets, with a focus on robust, technology-led execution.
-          </p>
-          <div class="hero-metrics">
-            <div class="metric">
-              <div class="metric-label">Markets</div>
-              <div class="metric-value">
-                <span>120+</span>
-              </div>
-            </div>
-            <div class="metric">
-              <div class="metric-label">Trading venues</div>
-              <div class="metric-value">
-                <span>35</span>
-                <span class="metric-tag">Multi-asset</span>
-              </div>
-            </div>
-            <div class="metric">
-              <div class="metric-label">Live strategies</div>
-              <div class="metric-value">
-                <span>250+</span>
-              </div>
-            </div>
-          </div>
-          <div class="hero-actions">
-            <a href="#careers" class="btn-primary">
-              <span>View roles</span>
-              <span class="btn-icon">↗</span>
-            </a>
-            <a href="#about" class="btn-secondary">
-              <span>How we trade</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-panel" aria-hidden="true">
-          <div class="panel-shell">
-            <div class="panel-inner">
-              <div class="panel-header">
-                <div class="panel-title">Live risk snapshot</div>
-                <div class="panel-tabs">
-                  <button class="panel-tab active">Gamma</button>
-                  <button class="panel-tab">Rates</button>
-                  <button class="panel-tab">Credit</button>
-                </div>
-              </div>
-              <div class="panel-grid">
-                <div class="panel-card">
-                  <div class="panel-card-header">
-                    <div class="panel-card-title">Volatility surface</div>
-                    <span class="panel-chip">Options · Index</span>
-                  </div>
-                  <div class="curve-row">
-                    <div>
-                      <div class="curve-label">Net gamma</div>
-                      <div class="curve-value">+ 1.24 · spot</div>
-                    </div>
-                    <div class="curve-spark"></div>
-                  </div>
-                  <div class="curve-row">
-                    <div>
-                      <div class="curve-label">Skew</div>
-                      <div class="curve-value">- 3.8 vol pts</div>
-                    </div>
-                    <div class="curve-spark"></div>
-                  </div>
-                </div>
-                <div class="panel-card">
-                  <div class="panel-card-header">
-                    <div class="panel-card-title">Intraday P&amp;L bands</div>
-                    <span class="panel-chip">Multi-asset</span>
-                  </div>
-                  <div class="panel-list">
-                    <div class="panel-row panel-row-header">
-                      <div>Book</div>
-                      <div>Direction</div>
-                      <div>P&amp;L</div>
-                    </div>
-                    <div class="panel-row">
-                      <div class="panel-row-symbol">Index options</div>
-                      <div class="panel-row-dir">Long vol</div>
-                      <div class="panel-row-pnl">+ 0.42%</div>
-                    </div>
-                    <div class="panel-row">
-                      <div class="panel-row-symbol">Rates futures</div>
-                      <div class="panel-row-dir sell">Short duration</div>
-                      <div class="panel-row-pnl">+ 0.18%</div>
-                    </div>
-                    <div class="panel-row">
-                      <div class="panel-row-symbol">Cross-asset arb</div>
-                      <div class="panel-row-dir">Market neutral</div>
-                      <div class="panel-row-pnl">+ 0.07%</div>
-                    </div>
-                  </div>
-                  <div class="panel-mini">
-                    <div class="mini-pill">
-                      <span>Risk-on budget</span>
-                      <strong>63%</strong>
-                    </div>
-                    <div class="mini-pill">
-                      <span>Systems uptime</span>
-                      <strong>99.99%</strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="panel-glow"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section class="section" id="about">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Firm</div>
-            <h2 class="section-title">Independent, research-driven, collaborative</h2>
-          </div>
-          <p class="section-summary">
-            VectorPoint operates as a single, integrated trading team where researchers, engineers, and traders work side by side to design and run systematic strategies across global markets.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-label">Approach</div>
-            <h3 class="card-title">Market making and macro views</h3>
-            <p class="card-body">
-              We quote continuously in listed derivatives, ETFs, and cash equities while running cross-asset macro strategies that balance statistical intuition with robust risk management.
-            </p>
-            <div class="badge-row">
-              <span class="badge">Equities</span>
-              <span class="badge">Rates</span>
-              <span class="badge">FX</span>
-              <span class="badge badge-soft">Derivatives</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-label">Culture</div>
-            <h3 class="card-title">One desk, shared ownership</h3>
-            <p class="card-body">
-              Decisions are made in the open, ideas travel freely between teams, and the best version of a system is the one that works for the firm rather than any single desk.
-            </p>
-            <div class="badge-row">
-              <span class="badge">Flat structure</span>
-              <span class="badge">High trust</span>
-              <span class="badge">Open code</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-label">Risk</div>
-            <h3 class="card-title">Resilient by construction</h3>
-            <p class="card-body">
-              Strategy capacity, stress scenarios, and real-time controls are built into each system so that portfolios remain robust across regimes, not just in backtests.
-            </p>
-            <div class="badge-row">
-              <span class="badge">Scenario grids</span>
-              <span class="badge">Intraday limits</span>
-              <span class="badge">T+0 analytics</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- Strategies -->
-      <section class="section" id="strategies">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Strategies</div>
-            <h2 class="section-title">Systematic, diversified, execution-aware</h2>
-          </div>
-          <p class="section-summary">
-            Our trading spans intraday liquidity provision to medium-horizon macro and relative value strategies, unified by a common architecture for research, deployment, and monitoring.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-label">Intraday</div>
-            <h3 class="card-title">Liquidity provision</h3>
-            <p class="card-body">
-              We stream tight prices in options and futures, adapting to order book dynamics, realized volatility, and microstructure signals in real time.
-            </p>
-            <div class="badge-row">
-              <span class="badge">Options MM</span>
-              <span class="badge">Index futures</span>
-              <span class="badge">Inventory control</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-label">Medium horizon</div>
-            <h3 class="card-title">Systematic macro</h3>
-            <p class="card-body">
-              Cross-asset signals combine price action, term structure, and flow information to express views with tightly controlled risk budgets.
-            </p>
-            <div class="badge-row">
-              <span class="badge">Rates curves</span>
-              <span class="badge">Vol surfaces</span>
-              <span class="badge">Cross-asset RV</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-label">Client</div>
-            <h3 class="card-title">Execution &amp; liquidity</h3>
-            <p class="card-body">
-              We partner with institutions to provide transparent, execution-aware liquidity solutions aligned with their mandates and constraints.
-            </p>
-            <div class="badge-row">
-              <span class="badge">Agency algos</span>
-              <span class="badge">Principal liquidity</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- Technology -->
-      <section class="section" id="technology">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Technology</div>
-            <h2 class="section-title">Engineering as a core strategy</h2>
-          </div>
-          <p class="section-summary">
-            Our trading stack is built in-house, from research backtesting to exchange connectivity, with engineers and researchers sharing ownership of the same codebase.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-label">Stack</div>
-            <h3 class="card-title">Research to production</h3>
-            <p class="card-body">
-              A single codepath powers backtests, paper trading, and live deployment, allowing strategies to move from idea to production with minimal friction.
-            </p>
-            <div class="badge-row">
-              <span class="badge">Unified framework</span>
-              <span class="badge">Deterministic sims</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-label">Tooling</div>
-            <h3 class="card-title">Custom UI and monitoring</h3>
-            <p class="card-body">
-              Traders and quants work in real-time web interfaces built for expert users, with deep introspection into orders, fills, and state.
-            </p>
-            <div class="badge-row">
-              <span class="badge">Real-time dashboards</span>
-              <span class="badge">Rich diagnostics</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-label">Infra</div>
-            <h3 class="card-title">Low-latency, high-reliability</h3>
-            <p class="card-body">
-              Our infrastructure is designed to minimize end-to-end latency while prioritizing reliability, observability, and graceful failure modes.
-            </p>
-            <div class="badge-row">
-              <span class="badge">Redundant paths</span>
-              <span class="badge">24/7 monitoring</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- Careers -->
-      <section class="section" id="careers">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Careers</div>
-            <h2 class="section-title">Join a small, focused team</h2>
-          </div>
-          <p class="section-summary">
-            We look for curious, quantitative thinkers from diverse backgrounds who want to build systems, reason from first principles, and collaborate closely with peers.
-          </p>
-        </div>
-
-        <div class="careers-grid">
-          <div class="careers-list">
-            <div class="careers-header-row">
-              <div>Role</div>
-              <div>Location</div>
-              <div>Track</div>
-            </div>
-            <div class="role-row">
-              <div class="role-title">Quantitative Researcher</div>
-              <div class="role-meta">Mumbai · Singapore</div>
-              <div class="role-meta">Full-time</div>
-            </div>
-            <div class="role-row">
-              <div class="role-title">Systems &amp; Trading Engineer</div>
-              <div class="role-meta">Mumbai</div>
-              <div class="role-meta">Full-time</div>
-            </div>
-            <div class="role-row">
-              <div class="role-title">Capital Markets Associate</div>
-              <div class="role-meta">Singapore</div>
-              <div class="role-meta">Full-time</div>
-            </div>
-          </div>
-          <aside class="careers-side">
-            <p class="careers-tagline">
-              If you enjoy working on hard, open-ended problems with people who care deeply about details, VectorPoint may be a good fit.
-            </p>
-            <p class="careers-pill">
-              We are always happy to meet strong candidates even when there is no specific opening listed.
-            </p>
-            <a href="#contact" class="btn-secondary">
-              <span>Share your profile</span>
-              <span class="btn-icon">→</span>
-            </a>
-          </aside>
-        </div>
-      </section>
-
-      <!-- Contact / Footer anchor -->
-      <section class="section" id="contact">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Contact</div>
-            <h2 class="section-title">Get in touch</h2>
-          </div>
-          <p class="section-summary">
-            For trading inquiries, institutional partnerships, or recruitment, reach out and a member of the team will respond.
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>© VectorPoint Capital Markets LLP</div>
-        <div class="footer-links">
-          <span>Legal</span>
-          <span>Privacy</span>
-          <span>Recruiting</span>
+          <div class="logo-primary">VectorPoint</div>
+          <div class="logo-secondary">Capital Markets</div>
         </div>
       </div>
-    </footer>
-  </div>
+      <nav class="nav-links">
+        <a href="#about" class="nav-link">Firm</a>
+        <a href="#strategies" class="nav-link">Strategies</a>
+        <a href="#technology" class="nav-link">Technology</a>
+        <a href="#careers" class="nav-link">Careers</a>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="section hero">
+    <div>
+      <div>
+        <span class="pill">Global Liquidity</span>
+        <span class="pill">Systematic Market Making</span>
+      </div>
+      <h1 class="hero-title">
+        A capital markets firm built at the intersection of
+        <span>research, code, and risk.</span>
+      </h1>
+      <p class="hero-subtitle">
+        VectorPoint Capital is a quantitative trading firm providing
+        consistent liquidity across global derivatives and cash markets.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#careers">View roles</a>
+        <a class="btn-secondary" href="#about">How we trade</a>
+      </div>
+    </div>
+
+    <div class="panel-shell">
+      <div class="panel-card">Live risk snapshot (monochrome)</div>
+      <div class="panel-card">Volatility &amp; P&amp;L bands</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-label">Approach</div>
+        <div class="card-title">Market making</div>
+        <div class="card-body">Systematic liquidity provision.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Culture</div>
+        <div class="card-title">One desk</div>
+        <div class="card-body">Shared ownership and open research.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Risk</div>
+        <div class="card-title">Resilient systems</div>
+        <div class="card-body">Stress-tested, live-controlled.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© VectorPoint Capital Markets LLP</div>
+      <div>Legal · Privacy · Recruiting</div>
+    </div>
+  </footer>
+
+</div>
 </body>
 </html>
