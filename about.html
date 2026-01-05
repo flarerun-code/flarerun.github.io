@@ -114,85 +114,114 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
-/* ENHANCED JOURNEY MAP */
-.journey-map {
-  display: flex;
-  justify-content: space-between;
+/* RIBBON JOURNEY MAP */
+.ribbon-journey {
   position: relative;
   margin-top: 3rem;
-  padding: 3rem 0;
+  padding: 2.5rem 0;
+  overflow: hidden;
 }
 
-.journey-map::before {
-  content: "";
+.ribbon-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 100%;
+  z-index: 2;
+}
+
+.ribbon-flow {
   position: absolute;
   top: 50%;
-  left: 8%;
-  right: 8%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #d0d0d0, #d0d0d0, transparent);
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: 
+    linear-gradient(90deg, 
+      transparent 0%, 
+      #e3f2fd 15%, 
+      #bbdefb 25%, 
+      #90caf9 40%, 
+      #e3f2fd 60%, 
+      #bbdefb 75%, 
+      transparent 100%
+    ),
+    linear-gradient(90deg, 
+      #f3e5f5 0%, 
+      #e1bee7 50%, 
+      #f3e5f5 100%
+    );
   transform: translateY(-50%);
-  z-index: 0;
-  border-radius: 2px;
+  border-radius: 40px;
+  box-shadow: 
+    0 8px 24px rgba(147, 51, 234, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  z-index: 1;
 }
 
-.journey-step {
+.ribbon-step {
   position: relative;
+  z-index: 3;
   text-align: center;
   flex: 1;
-  z-index: 1;
-  background: rgba(255,255,255,0.9);
-  padding: 2rem 1rem;
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  border: 1px solid rgba(224,224,224,0.6);
+  max-width: 280px;
+  margin: 0 1rem;
 }
 
-.journey-step:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  border-color: rgba(102,102,102,0.3);
-}
-
-.journey-step .year {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.05em;
-}
-
-.journey-step .circle {
-  width: 28px;
-  height: 28px;
-  background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+.ribbon-year {
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2);
+  color: white;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  margin: 0 auto 1.25rem;
-  border: 3px solid #d0d0d0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
   transition: all 0.3s ease;
 }
 
-.journey-step:hover .circle {
-  transform: scale(1.15);
-  background: linear-gradient(135deg, var(--text), var(--muted));
-  border-color: var(--muted);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+.ribbon-step:hover .ribbon-year {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 12px 28px rgba(102, 126, 234, 0.5);
 }
 
-.journey-step h3 {
+.ribbon-content {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  padding: 1.75rem 1.25rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border: 1px solid rgba(224,224,224,0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(20px);
+}
+
+.ribbon-step:hover .ribbon-content {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+  border-color: rgba(102,126,234,0.2);
+}
+
+.ribbon-title {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: var(--text);
-  letter-spacing: -0.01em;
+  line-height: 1.3;
 }
 
-.journey-step p {
-  font-size: 0.88rem;
-  line-height: 1.55;
+.ribbon-text {
+  font-size: 0.875rem;
   color: var(--muted);
+  line-height: 1.55;
 }
 
 /* FOOTER */
@@ -217,16 +246,25 @@ footer {
   .icon-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
 
-  .journey-map {
+  .ribbon-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 3rem;
   }
-  .journey-map::before { 
-    display: none; 
+  
+  .ribbon-flow {
+    height: 4px;
+    top: 25px;
+    border-radius: 2px;
   }
-  .journey-step { 
-    margin-bottom: 2rem; 
-    max-width: 400px;
+  
+  .ribbon-year {
+    top: -1.75rem;
+  }
+  
+  .ribbon-step {
+    max-width: 100%;
+    margin: 0;
   }
 }
 </style>
@@ -257,7 +295,7 @@ footer {
   </p>
 </section>
 
-<!-- THINK BUILD STRATEGIZE TRADE -->
+<!-- PROCESS -->
 <section class="section">
   <div class="section-title">Our Process</div>
 
@@ -308,42 +346,48 @@ footer {
   </div>
 </section>
 
-<!-- ENHANCED JOURNEY MAP -->
+<!-- RIBBON JOURNEY -->
 <section class="section">
   <div class="section-title">Our Journey</div>
 
-  <div class="journey-map">
-    <div class="journey-step">
-      <div class="year">2022</div>
-      <div class="circle"></div>
-      <h3>Digital Commodities</h3>
-      <p>
-        Pioneered programmatic trading in digital commodities,
-        establishing foundational frameworks for liquidity provision
-        and volatility management.
-      </p>
-    </div>
+  <div class="ribbon-journey">
+    <div class="ribbon-flow"></div>
+    <div class="ribbon-container">
+      <div class="ribbon-step">
+        <div class="ribbon-year">2022</div>
+        <div class="ribbon-content">
+          <div class="ribbon-title">Digital Commodities</div>
+          <div class="ribbon-text">
+            Pioneered programmatic trading in digital commodities,
+            establishing foundational frameworks for liquidity provision
+            and volatility management.
+          </div>
+        </div>
+      </div>
 
-    <div class="journey-step">
-      <div class="year">2024</div>
-      <div class="circle"></div>
-      <h3>Asset Class Expansion</h3>
-      <p>
-        Extended systematic strategies across equities, fixed income,
-        and derivatives markets, leveraging proprietary research
-        infrastructure.
-      </p>
-    </div>
+      <div class="ribbon-step">
+        <div class="ribbon-year">2024</div>
+        <div class="ribbon-content">
+          <div class="ribbon-title">Asset Class Expansion</div>
+          <div class="ribbon-text">
+            Extended systematic strategies across equities, fixed income,
+            and derivatives markets, leveraging proprietary research
+            infrastructure.
+          </div>
+        </div>
+      </div>
 
-    <div class="journey-step">
-      <div class="year">2026</div>
-      <div class="circle"></div>
-      <h3>Multi-Segment Leadership</h3>
-      <p>
-        Established institutional presence across Indian exchanges,
-        deploying sophisticated multi-asset quantitative platforms
-        with adaptive market intelligence.
-      </p>
+      <div class="ribbon-step">
+        <div class="ribbon-year">2026</div>
+        <div class="ribbon-content">
+          <div class="ribbon-title">Multi-Segment Leadership</div>
+          <div class="ribbon-text">
+            Established institutional presence across Indian exchanges,
+            deploying sophisticated multi-asset quantitative platforms
+            with adaptive market intelligence.
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
