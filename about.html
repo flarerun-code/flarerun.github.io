@@ -74,32 +74,77 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* GRID + CARD */
+/* INTRO */
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid #2a2a2a;
-  border-radius: 14px;
-  padding: 1.3rem;
-}
-
-.card h3 {
+.intro {
+  max-width: 760px;
   font-size: 0.95rem;
-  margin-bottom: 0.4rem;
+  line-height: 1.75;
+  color: var(--muted);
 }
 
-.card p {
-  font-size: 0.88rem;
-  line-height: 1.65;
+/* ICON GRID */
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.icon-item {
+  text-align: center;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.75rem;
+  stroke: #fff;
+  opacity: 0.9;
+}
+
+.icon-title {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.icon-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* JOURNEY */
+
+.journey {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.journey-step {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(to right, #0b0b0b, #050505);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.journey-step:hover {
+  transform: translateY(-2px);
+  border-color: #2a2a2a;
+}
+
+.journey-step h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.journey-step p {
+  font-size: 0.85rem;
+  line-height: 1.6;
   color: var(--muted);
 }
 
@@ -122,7 +167,7 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .grid-3 { grid-template-columns: 1fr; }
+  .icon-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
 }
 </style>
@@ -143,87 +188,97 @@ footer {
   </div>
 </nav>
 
-<!-- INTRO -->
+<!-- ABOUT -->
 <section class="section">
   <div class="section-title">About Us</div>
-
-  <div class="card" style="max-width: 760px;">
-    <p>
-      VectorPoint Capital is a quantitative proprietary trading firm
-      focused on systematic strategies across global financial markets.
-      We specialize in building algorithmic trading systems driven by
-      data, mathematics, and disciplined risk management.
-      <br /><br />
-      Our liquidity provision contributes to the efficiency and
-      resilience of modern financial markets, particularly during
-      periods of elevated volatility. Every strategy we deploy is
-      designed with robustness, scalability, and capital efficiency
-      as core objectives.
-    </p>
-  </div>
+  <p class="intro">
+    VectorPoint Capital is a quantitative proprietary trading firm
+    focused on systematic strategies across global financial markets.
+    We design and deploy algorithmic trading systems grounded in
+    data, mathematics, and disciplined risk management.
+  </p>
 </section>
 
-<!-- THINK / BUILD / STRATEGIZE -->
+<!-- THINK BUILD STRATEGIZE TRADE -->
 <section class="section">
   <div class="section-title">Our Process</div>
 
-  <div class="grid-3">
-    <div class="card">
-      <h3>Think</h3>
-      <p>
-        We identify and analyze market behavior to uncover
-        structural inefficiencies. Ideas are rigorously debated,
-        stress-tested, and validated through quantitative research.
-      </p>
+  <div class="icon-grid">
+    <div class="icon-item">
+      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+        <path d="M12 3a6 6 0 0 0-3 11v2h6v-2a6 6 0 0 0-3-11z"/>
+      </svg>
+      <div class="icon-title">Think</div>
+      <div class="icon-text">
+        Identify market inefficiencies through research,
+        debate, and empirical validation.
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Build</h3>
-      <p>
-        We engineer highly optimized algorithmic trading systems
-        using resilient infrastructure, automation, and
-        low-latency execution frameworks.
-      </p>
+    <div class="icon-item">
+      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+        <path d="M10 6h4v4h-4zM4 10h4v4H4zM16 10h4v4h-4z"/>
+      </svg>
+      <div class="icon-title">Build</div>
+      <div class="icon-text">
+        Engineer optimized algorithmic systems
+        with resilient infrastructure.
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Strategize</h3>
-      <p>
-        Our strategies are constructed using advanced mathematical
-        and statistical modeling, ensuring decisions are grounded
-        in probability and empirical evidence.
-      </p>
+    <div class="icon-item">
+      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+        <path d="M3 17l6-6 4 4 7-7"/>
+      </svg>
+      <div class="icon-title">Strategize</div>
+      <div class="icon-text">
+        Apply advanced mathematical and
+        statistical modeling techniques.
+      </div>
+    </div>
+
+    <div class="icon-item">
+      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+      <div class="icon-title">Trade</div>
+      <div class="icon-text">
+        Execute systematically across asset
+        classes with real-time controls.
+      </div>
     </div>
   </div>
 </section>
 
-<!-- TRADE / RISK / TECHNOLOGY -->
+<!-- JOURNEY -->
 <section class="section">
-  <div class="grid-3">
-    <div class="card">
-      <h3>Trade</h3>
+  <div class="section-title">Our Journey</div>
+
+  <div class="journey">
+    <div class="journey-step">
+      <h3>Origins in Commodities</h3>
       <p>
-        We trade systematically across a broad range of asset
-        classes on algorithmic markets worldwide, maintaining
-        consistency across market regimes.
+        Our journey began in commodity markets, where liquidity,
+        structure, and volatility demanded disciplined execution
+        and robust risk management.
       </p>
     </div>
 
-    <div class="card">
-      <h3>Risk & Control</h3>
+    <div class="journey-step">
+      <h3>Systematic Expansion</h3>
       <p>
-        Risk management is embedded at every layer of our
-        trading lifecycle, with real-time monitoring,
-        exposure limits, and capital controls.
+        As our research capabilities matured, we expanded into
+        additional market segments, applying the same systematic
+        principles across instruments and regimes.
       </p>
     </div>
 
-    <div class="card">
-      <h3>Technology</h3>
+    <div class="journey-step">
+      <h3>Multi-Asset Quant Platform</h3>
       <p>
-        Our technology stack is designed for performance,
-        reliability, and adaptability, enabling continuous
-        research iteration and stable production deployment.
+        Today, VectorPoint Capital operates as a multi-asset
+        quantitative trading platform, continuously evolving
+        with market structure and technology.
       </p>
     </div>
   </div>
