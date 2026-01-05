@@ -33,7 +33,6 @@
       font-family: var(--font-sans);
       background: radial-gradient(circle at top, #111 0%, #000 65%);
       color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -54,7 +53,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(14px);
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.92);
       border-bottom: 1px solid var(--border-subtle);
     }
 
@@ -134,7 +133,6 @@
 
     .pill {
       display: inline-flex;
-      align-items: center;
       padding: 0.3rem 0.7rem;
       border-radius: 999px;
       font-size: 0.7rem;
@@ -150,10 +148,6 @@
       font-size: clamp(2.4rem, 3vw + 1rem, 3.1rem);
       line-height: 1.1;
       margin: 1rem 0;
-    }
-
-    .hero-title span {
-      color: #fff;
     }
 
     .hero-subtitle {
@@ -190,24 +184,7 @@
       text-transform: uppercase;
     }
 
-    /* ================= PANELS ================= */
-
-    .panel-shell {
-      background: #0b0b0b;
-      border-radius: 18px;
-      border: 1px solid #262626;
-      padding: 1rem;
-    }
-
-    .panel-card {
-      background: #0b0b0b;
-      border: 1px solid #2a2a2a;
-      border-radius: 12px;
-      padding: 0.8rem;
-      margin-bottom: 0.8rem;
-    }
-
-    /* ================= GRID / CARDS ================= */
+    /* ================= CARDS ================= */
 
     .grid-3 {
       display: grid;
@@ -240,17 +217,6 @@
       color: var(--text-muted);
     }
 
-    .badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      padding: 0.1rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid #333;
-      margin-right: 0.35rem;
-      margin-top: 0.4rem;
-      color: #ddd;
-    }
-
     /* ================= FOOTER ================= */
 
     .footer {
@@ -268,8 +234,6 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-
-    /* ================= RESPONSIVE ================= */
 
     @media (max-width: 900px) {
       .hero {
@@ -298,11 +262,10 @@
           <div class="logo-secondary">Capital Markets</div>
         </div>
       </div>
+
       <nav class="nav-links">
-        <a href="#about" class="nav-link">Firm</a>
-        <a href="#strategies" class="nav-link">Strategies</a>
+        <a href="#about" class="nav-link">About Us</a>
         <a href="#technology" class="nav-link">Technology</a>
-        <a href="#careers" class="nav-link">Careers</a>
         <a href="#contact" class="nav-cta">Get in touch</a>
       </nav>
     </div>
@@ -311,27 +274,23 @@
   <!-- HERO -->
   <section class="section hero">
     <div>
-      <div>
-        <span class="pill">Global Liquidity</span>
-        <span class="pill">Systematic Market Making</span>
-      </div>
+      <span class="pill">Global Liquidity</span>
+      <span class="pill">Systematic Trading</span>
+
       <h1 class="hero-title">
         A capital markets firm built at the intersection of
-        <span>research, code, and risk.</span>
+        research, code, and risk.
       </h1>
+
       <p class="hero-subtitle">
         VectorPoint Capital is a quantitative trading firm providing
         consistent liquidity across global derivatives and cash markets.
       </p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="#careers">View roles</a>
-        <a class="btn-secondary" href="#about">How we trade</a>
-      </div>
-    </div>
 
-    <div class="panel-shell">
-      <div class="panel-card">Live risk snapshot (monochrome)</div>
-      <div class="panel-card">Volatility &amp; P&amp;L bands</div>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#about">About Us</a>
+        <a class="btn-secondary" href="#technology">Technology</a>
+      </div>
     </div>
   </section>
 
@@ -339,21 +298,65 @@
   <section class="section" id="about">
     <div class="grid-3">
       <div class="card">
-        <div class="card-label">Approach</div>
-        <div class="card-title">Market making</div>
-        <div class="card-body">Systematic liquidity provision.</div>
+        <div class="card-label">Technology</div>
+        <div class="card-title">Low-latency trading systems</div>
+        <div class="card-body">
+          Production-grade infrastructure engineered for speed, resilience,
+          and deterministic execution.
+        </div>
       </div>
       <div class="card">
-        <div class="card-label">Culture</div>
-        <div class="card-title">One desk</div>
-        <div class="card-body">Shared ownership and open research.</div>
+        <div class="card-label">Quantitative Research</div>
+        <div class="card-title">Data-driven decision making</div>
+        <div class="card-body">
+          Statistical modeling, simulation, and continuous validation across
+          market regimes.
+        </div>
       </div>
       <div class="card">
-        <div class="card-label">Risk</div>
-        <div class="card-title">Resilient systems</div>
-        <div class="card-body">Stress-tested, live-controlled.</div>
+        <div class="card-label">Risk and Control</div>
+        <div class="card-title">Capital protection first</div>
+        <div class="card-body">
+          Real-time risk monitoring, automated controls, and strict exposure
+          limits embedded in every strategy.
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="section" id="technology">
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-label">Stack</div>
+        <div class="card-title">Research to production</div>
+        <div class="card-body">
+          A unified framework powering backtests, simulations, and live trading.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Tooling</div>
+        <div class="card-title">Real-time visibility</div>
+        <div class="card-body">
+          Custom dashboards and monitoring tools for expert users.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Infrastructure</div>
+        <div class="card-title">Low-latency, reliable</div>
+        <div class="card-body">
+          Redundant systems engineered for performance and resilience.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Get in touch</h2>
+    <p class="hero-subtitle">
+      For trading inquiries, partnerships, or recruitment, reach out to the team.
+    </p>
   </section>
 
   <!-- FOOTER -->
