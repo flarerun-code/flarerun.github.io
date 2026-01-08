@@ -7,11 +7,14 @@
 
 <style>
 :root {
-  --bg: #fff;
+  --bg: #ffffff;
+  --panel: #0f0f0f;
+  --panel-soft: #161616;
   --card: #f5f5f5;
-  --border: #e0e0e0;
+  --border: #e1e1e1;
   --text: #111;
-  --muted: #666;
+  --muted: #777;
+  --light: #ffffff;
   --font: system-ui, -apple-system, BlinkMacSystemFont,
           "SF Pro Text", "Segoe UI", sans-serif;
 }
@@ -20,7 +23,7 @@
 
 body {
   font-family: var(--font);
-  background: radial-gradient(circle at top, #fff 0%, #f7f7f7 65%);
+  background: var(--bg);
   color: var(--text);
 }
 
@@ -30,9 +33,9 @@ a { color: inherit; text-decoration: none; }
 .nav {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(14px);
+  z-index: 20;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -46,19 +49,57 @@ a { color: inherit; text-decoration: none; }
 }
 
 .logo {
-  font-size: 0.9rem;
-  letter-spacing: 0.16em;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .nav-links {
   display: flex;
   gap: 2rem;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
 .nav-links a:hover { color: var(--text); }
+
+/* HERO */
+.hero {
+  background:
+    radial-gradient(circle at 20% 20%, #2a2a2a, transparent 60%),
+    radial-gradient(circle at 80% 80%, #1f1f1f, transparent 55%),
+    var(--panel);
+  color: var(--light);
+}
+
+.hero-inner {
+  max-width: 1120px;
+  margin: auto;
+  padding: 6rem 1.5rem 5rem;
+}
+
+.hero-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 1.4rem;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.3;
+  max-width: 760px;
+}
+
+.hero-text {
+  margin-top: 1.6rem;
+  max-width: 700px;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #cfcfcf;
+}
 
 /* SECTIONS */
 .section {
@@ -67,96 +108,78 @@ a { color: inherit; text-decoration: none; }
   padding: 5rem 1.5rem;
 }
 
-.section-tight {
-  padding-top: 3.5rem;
-}
-
 .section-title {
   font-size: 0.75rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
-/* INTRO (Hero-style) */
-.intro-wrap {
-  max-width: 820px;
-}
-
-.intro-heading {
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
-}
-
-.intro {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: var(--muted);
-}
-
-/* ICON GRID */
+/* PROCESS */
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 2rem;
 }
 
 .icon-item {
+  background: linear-gradient(180deg, #ffffff, #f3f3f3);
+  border-radius: 22px;
+  padding: 2.2rem 1.8rem;
   text-align: center;
+  border: 1px solid var(--border);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.icon-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
 }
 
 .icon {
-  width: 46px;
-  height: 46px;
-  margin: 0 auto 0.9rem;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1rem;
   stroke: var(--text);
-  opacity: 0.9;
 }
 
 .icon-title {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-bottom: 0.4rem;
 }
 
 .icon-text {
   font-size: 0.82rem;
-  line-height: 1.6;
   color: var(--muted);
+  line-height: 1.6;
 }
 
-/* JOURNEY FEATURE BLOCK */
+/* JOURNEY */
 .journey-feature {
-  background: linear-gradient(180deg, #fff, #f6f6f6);
+  background: var(--panel-soft);
   border-radius: 28px;
-  padding: 4rem 2rem;
-  margin-top: 1rem;
+  padding: 4rem 3rem;
+  color: var(--light);
 }
 
-/* MAP */
 .journey-map-container {
   position: relative;
   margin-top: 3rem;
   padding: 3rem 0;
-  min-height: 320px;
 }
 
 .journey-path {
   position: absolute;
   top: 50%;
-  left: 8%;
-  right: 8%;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    var(--border) 10%, 
-    var(--border) 90%, 
-    transparent 100%
+  left: 6%;
+  right: 6%;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
   );
-  transform: translateY(-50%);
 }
 
 .journey-nodes {
@@ -164,7 +187,6 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
   position: relative;
   z-index: 2;
-  height: 340px;
 }
 
 .journey-node {
@@ -172,57 +194,53 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
   align-items: center;
   flex: 1;
-  padding: 1rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
 }
 
 .journey-node:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
 }
 
 .node-circle {
   width: 56px;
   height: 56px;
-  background: var(--text);
+  background: #fff;
+  color: #000;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  box-shadow: 0 10px 24px rgba(17,17,17,0.25);
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .node-content {
-  background: rgba(255,255,255,0.96);
-  padding: 1.3rem 1.2rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 1.4rem 1.3rem;
   border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  border: 1px solid rgba(224,224,224,0.8);
   text-align: center;
   max-width: 220px;
 }
 
 .node-title {
   font-size: 0.9rem;
-  font-weight: 600;
   margin-bottom: 0.6rem;
 }
 
 .node-text {
   font-size: 0.8rem;
-  color: var(--muted);
+  color: #cfcfcf;
   line-height: 1.55;
 }
 
 /* FOOTER */
 footer {
-  padding: 2rem 1.5rem;
-  font-size: 0.75rem;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
+  background: #0f0f0f;
+  color: #aaa;
+  padding: 2.5rem 1.5rem;
 }
 
 .footer-inner {
@@ -231,22 +249,25 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  font-size: 0.75rem;
 }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .icon-grid { grid-template-columns: 1fr 1fr; }
-  .nav-links { display: none; }
-
+  .icon-grid,
   .journey-nodes {
+    grid-template-columns: 1fr;
     flex-direction: column;
-    height: auto;
     gap: 2.5rem;
     align-items: center;
   }
 
   .journey-path { display: none; }
+  .nav-links { display: none; }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
 }
 </style>
 </head>
@@ -264,21 +285,24 @@ footer {
   </div>
 </nav>
 
-<section class="section">
-  <div class="section-title">About Us</div>
-  <div class="intro-wrap">
-    <div class="intro-heading">
-      A quantitative proprietary trading firm focused on systematic excellence.
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">About Us</div>
+    <div class="hero-title">
+      A quantitative proprietary trading firm built on research,
+      engineering, and disciplined execution.
     </div>
-    <p class="intro">
-      VectorPoint Capital designs and deploys algorithmic trading systems across
-      global financial markets. Our work is grounded in data, mathematics,
-      engineering discipline, and institutional-grade risk management.
+    <p class="hero-text">
+      VectorPoint Capital designs systematic trading systems grounded
+      in data, mathematics, and institutional-grade risk management
+      across global financial markets.
     </p>
   </div>
 </section>
 
-<section class="section section-tight">
+<!-- PROCESS -->
+<section class="section">
   <div class="section-title">Our Process</div>
 
   <div class="icon-grid">
@@ -316,12 +340,14 @@ footer {
   </div>
 </section>
 
+<!-- JOURNEY -->
 <section class="section">
   <div class="section-title">Our Journey</div>
 
   <div class="journey-feature">
     <div class="journey-map-container">
       <div class="journey-path"></div>
+
       <div class="journey-nodes">
         <div class="journey-node">
           <div class="node-circle">2022</div>
