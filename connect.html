@@ -30,7 +30,6 @@ body {
 a { color: inherit; text-decoration: none; }
 
 /* NAV */
-
 .nav {
   position: sticky;
   top: 0;
@@ -65,7 +64,6 @@ a { color: inherit; text-decoration: none; }
 .nav-links a:hover { color: var(--text); }
 
 /* HERO */
-
 .hero {
   background:
     radial-gradient(circle at 20% 20%, #2a2a2a, transparent 60%),
@@ -77,7 +75,7 @@ a { color: inherit; text-decoration: none; }
 .hero-inner {
   max-width: 1120px;
   margin: auto;
-  padding: 6rem 1.5rem 5rem;
+  padding: 6rem 1.5rem 4rem;
 }
 
 .hero-label {
@@ -85,155 +83,72 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.28em;
   text-transform: uppercase;
   opacity: 0.6;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .hero-title {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 500;
   line-height: 1.25;
-  max-width: 780px;
+  max-width: 700px;
 }
 
-.hero-text {
-  margin-top: 1.6rem;
-  max-width: 720px;
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: #cfcfcf;
-}
-
-/* SECTION */
-
-.section {
+/* CONTACT */
+.contact {
   max-width: 1120px;
   margin: auto;
-  padding: 5rem 1.5rem;
+  padding: 4rem 1.5rem 3rem;
 }
-
-.section-title {
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 2.5rem;
-}
-
-/* CONTACT CARDS */
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .contact-card {
   background: linear-gradient(180deg, #ffffff, #f3f3f3);
-  border-radius: 24px;
-  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
   border: 1px solid var(--border);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.contact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
 }
 
 .contact-icon {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   background: var(--panel);
   color: var(--light);
-  border-radius: 16px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
 .contact-title {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.contact-text {
+.contact-detail {
   font-size: 0.9rem;
   color: var(--muted);
-  line-height: 1.65;
-  margin-bottom: 1.5rem;
-}
-
-/* OPPORTUNITIES */
-
-.opportunities {
-  background: var(--panel-soft);
-  border-radius: 28px;
-  padding: 4.5rem 3.5rem;
-  color: var(--light);
-  text-align: center;
-}
-
-.opp-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-top: 3rem;
-}
-
-.opp-item {
-  padding: 2rem 1rem;
-}
-
-.opp-title {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
-}
-
-.opp-text {
-  font-size: 0.85rem;
-  color: #cfcfcf;
-  line-height: 1.65;
+  word-break: break-all;
 }
 
 /* FOOTER */
-
 footer {
   background: #0f0f0f;
   color: #aaa;
-  padding: 2.5rem 1.5rem;
-}
-
-.footer-inner {
-  max-width: 1120px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  padding: 2rem 1.5rem;
+  text-align: center;
   font-size: 0.75rem;
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 900px) {
-  .contact-grid,
-  .opp-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .opportunities {
-    padding: 3rem 2rem;
-  }
+  .nav-links { display: none; }
 }
 </style>
 </head>
@@ -251,114 +166,46 @@ footer {
     </div>
   </nav>
 
-<!-- HERO -->
-
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-label">Connect</div>
-    <div class="hero-title">
-      Partnering with exceptional quantitative talent
-      and institutional collaborators.
-    </div>
-    <p class="hero-text">
-      We seek researchers, engineers, and partners who share our commitment
-      to systematic trading excellence and institutional-grade execution.
-    </p>
+    <div class="hero-title">Contact Information</div>
   </div>
 </section>
 
-<!-- CONTACT -->
-
-<section class="section">
-  <div class="section-title">Get In Touch</div>
-
+<section class="contact">
   <div class="contact-grid">
     <div class="contact-card">
       <div class="contact-icon">📧</div>
+      <div class="contact-title">Primary</div>
+      <div class="contact-detail">hello@vectorpoint.capital</div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">👥</div>
       <div class="contact-title">Trading & Research</div>
-      <div class="contact-text">
-        Opportunities for quantitative researchers and systematic traders.
-        <br><br>
-        <strong>trading@vectorpoint.capital</strong>
-      </div>
+      <div class="contact-detail">trading@vectorpoint.capital</div>
     </div>
 
     <div class="contact-card">
       <div class="contact-icon">💻</div>
-      <div class="contact-title">Engineering & Infra</div>
-      <div class="contact-text">
-        High-performance systems and low-latency infrastructure roles.
-        <br><br>
-        <strong>engineering@vectorpoint.capital</strong>
-      </div>
+      <div class="contact-title">Engineering</div>
+      <div class="contact-detail">engineering@vectorpoint.capital</div>
     </div>
 
     <div class="contact-card">
-      <div class="contact-icon">🤝</div>
-      <div class="contact-title">Institutional Partners</div>
-      <div class="contact-text">
-        Prime brokers, exchanges, and technology collaborators.
-        <br><br>
-        <strong>partners@vectorpoint.capital</strong>
-      </div>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-icon">📞</div>
-      <div class="contact-title">General Inquiries</div>
-      <div class="contact-text">
-        Business development and operational discussions.
-        <br><br>
-        <strong>hello@vectorpoint.capital</strong>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OPPORTUNITIES -->
-
-<section class="section">
-  <div class="section-title">We're Hiring</div>
-
-  <div class="opportunities">
-    <div style="font-size: 1.1rem; margin-bottom: 1rem; opacity: 0.9;">
-      Quantitative Researchers • Low-Latency Engineers • 
-      Systematic Traders • Infrastructure Specialists
-    </div>
-    
-    <div class="opp-grid">
-      <div class="opp-item">
-        <div class="opp-title">Quant Research</div>
-        <div class="opp-text">
-          Develop statistical signals and trading models across
-          equities, options, and futures markets.
-        </div>
-      </div>
-
-      <div class="opp-item">
-        <div class="opp-title">Trading Systems</div>
-        <div class="opp-text">
-          Build execution engines and risk management systems
-          for institutional-scale deployments.
-        </div>
-      </div>
-
-      <div class="opp-item">
-        <div class="opp-title">Infrastructure</div>
-        <div class="opp-text">
-          Design low-latency data pipelines and production
-          trading infrastructure.
-        </div>
+      <div class="contact-icon">📍</div>
+      <div class="contact-title">Location</div>
+      <div class="contact-detail">
+        VectorPoint Capital Markets LLP<br>
+        Jaipur, Rajasthan, India
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-inner">
-    <div>© VectorPoint Capital Markets LLP</div>
-    <div>Legal · Privacy · Recruiting</div>
-  </div>
+  © VectorPoint Capital Markets LLP
 </footer>
 
 </body>
