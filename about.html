@@ -75,7 +75,7 @@ a { color: inherit; text-decoration: none; }
 .hero-inner {
   max-width: 1120px;
   margin: auto;
-  padding: 5rem 1.5rem 3.5rem; /* reduced */
+  padding: 6rem 1.5rem 5rem;
 }
 
 .hero-label {
@@ -83,7 +83,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.28em;
   text-transform: uppercase;
   opacity: 0.6;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .hero-title {
@@ -94,7 +94,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-text {
-  margin-top: 1.4rem;
+  margin-top: 1.6rem;
   max-width: 700px;
   font-size: 0.95rem;
   line-height: 1.75;
@@ -105,7 +105,7 @@ a { color: inherit; text-decoration: none; }
 .section {
   max-width: 1120px;
   margin: auto;
-  padding: 3.5rem 1.5rem; /* reduced from 5rem */
+  padding: 5rem 1.5rem;
 }
 
 .section-title {
@@ -113,7 +113,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 /* PROCESS */
@@ -159,14 +159,14 @@ a { color: inherit; text-decoration: none; }
 .journey-feature {
   background: var(--panel-soft);
   border-radius: 28px;
-  padding: 3.2rem 3rem; /* reduced */
+  padding: 4rem 3rem;
   color: var(--light);
 }
 
 .journey-map-container {
   position: relative;
-  margin-top: 2.5rem;
-  padding: 2.5rem 0;
+  margin-top: 3rem;
+  padding: 3rem 0;
 }
 
 .journey-path {
@@ -212,14 +212,14 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   font-size: 0.75rem;
   font-weight: 700;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.2rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .node-content {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.18);
-  padding: 1.3rem 1.2rem;
+  padding: 1.4rem 1.3rem;
   border-radius: 18px;
   text-align: center;
   max-width: 220px;
@@ -240,7 +240,7 @@ a { color: inherit; text-decoration: none; }
 footer {
   background: #0f0f0f;
   color: #aaa;
-  padding: 2.2rem 1.5rem;
+  padding: 2.5rem 1.5rem;
 }
 
 .footer-inner {
@@ -258,7 +258,7 @@ footer {
   .journey-nodes {
     grid-template-columns: 1fr;
     flex-direction: column;
-    gap: 2.2rem;
+    gap: 2.5rem;
     align-items: center;
   }
 
@@ -307,7 +307,37 @@ footer {
   <div class="section-title">Our Process</div>
 
   <div class="icon-grid">
-    <!-- unchanged content -->
+    <div class="icon-item">
+      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+        <path d="M12 3a6 6 0 0 0-3 11v2h6v-2a6 6 0 0 0-3-11z"/>
+      </svg>
+      <div class="icon-title">Think</div>
+      <div class="icon-text">Research-driven identification of opportunities</div>
+    </div>
+
+    <div class="icon-item">
+      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+        <path d="M10 6h4v4h-4zM4 10h4v4H4zM16 10h4v4h-4z"/>
+      </svg>
+      <div class="icon-title">Build</div>
+      <div class="icon-text">Resilient trading infrastructure built by analysing metrics and datasets of different asset classes.</div>
+    </div>
+
+    <div class="icon-item">
+      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+        <path d="M3 17l6-6 4 4 7-7"/>
+      </svg>
+      <div class="icon-title">Strategize</div>
+      <div class="icon-text">Statistical and automated model deployment with accurate risk measures.</div>
+    </div>
+
+    <div class="icon-item">
+      <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+      <div class="icon-title">Trade</div>
+      <div class="icon-text">Systematic execution with real-time controls and monitoring.</div>
+    </div>
   </div>
 </section>
 
@@ -316,7 +346,51 @@ footer {
   <div class="section-title">Our Journey</div>
 
   <div class="journey-feature">
-    <!-- unchanged content -->
+    <div class="journey-map-container">
+      <div class="journey-path"></div>
+
+      <div class="journey-nodes">
+        <div class="journey-node">
+          <div class="node-circle">2022</div>
+          <div class="node-content">
+            <div class="node-title">Digital Commodities</div>
+            <div class="node-text">Started dealing in digital commodities in India - Majorly digital gold under Mosboard Technologies.</div>
+          </div>
+        </div>
+
+        <div class="journey-node">
+          <div class="node-circle">2023</div>
+          <div class="node-content">
+            <div class="node-title">Infrastructure Build</div>
+            <div class="node-text">Expanded research around other asset classes in the Indian markets by capturing data.</div>
+          </div>
+        </div>
+
+        <div class="journey-node">
+          <div class="node-circle">2024</div>
+          <div class="node-content">
+            <div class="node-title">Asset Expansion</div>
+            <div class="node-text">Build systems based on automation for equities, derivatives, and multi-asset classes</div>
+          </div>
+        </div>
+
+        <div class="journey-node">
+          <div class="node-circle">2025</div>
+          <div class="node-content">
+            <div class="node-title">Platform Evolution</div>
+            <div class="node-text">Setup tools to identify opportunities and trade them with appropriate risk management</div>
+          </div>
+        </div>
+
+        <div class="journey-node">
+          <div class="node-circle">2026</div>
+          <div class="node-content">
+            <div class="node-title">Institutional Scale</div>
+            <div class="node-text">Incorporated Arcnine Research to actively engage in and participate within the financial markets.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -328,4 +402,4 @@ footer {
 </footer>
 
 </body>
-</html>
+</html> 
