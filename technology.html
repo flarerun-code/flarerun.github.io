@@ -29,6 +29,7 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
+  scroll-behavior: smooth;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -148,13 +149,6 @@ a { color: inherit; text-decoration: none; }
   border-radius: 18px;
   background: linear-gradient(180deg, #ffffff, #f3f3f3);
   border: 1px solid var(--border);
-  transition: transform var(--fast) var(--ease),
-              box-shadow var(--fast) var(--ease);
-}
-
-.principle:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.08);
 }
 
 .principle h3 {
@@ -180,13 +174,6 @@ a { color: inherit; text-decoration: none; }
   background: var(--card);
   border-radius: 20px;
   padding: 2rem;
-  transition: transform var(--fast) var(--ease),
-              box-shadow var(--fast) var(--ease);
-}
-
-.cap-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 32px rgba(0,0,0,0.1);
 }
 
 .cap-title {
@@ -201,64 +188,6 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.83rem;
   color: var(--muted);
   line-height: 1.6;
-}
-
-/* ================= STACK ================= */
-
-.stack {
-  background: var(--panel-soft);
-  border-radius: 26px;
-  padding: 3.2rem 2.8rem;
-  color: var(--light);
-}
-
-.stack-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.2rem;
-}
-
-.stack-item h4 {
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.stack-item p {
-  font-size: 0.78rem;
-  color: #bcbcbc;
-  line-height: 1.6;
-}
-
-/* ================= RESEARCH ================= */
-
-.research-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.8rem;
-}
-
-.research-card {
-  background: linear-gradient(180deg, #ffffff, #f4f4f4);
-  border-radius: 22px;
-  padding: 2.2rem;
-  border: 1px solid var(--border);
-}
-
-.research-card h3 {
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.research-card p {
-  font-size: 0.83rem;
-  line-height: 1.6;
-  color: var(--muted);
 }
 
 /* ================= FOOTER ================= */
@@ -281,9 +210,7 @@ footer {
 
 @media (max-width: 900px) {
   .principles,
-  .cap-grid,
-  .stack-grid,
-  .research-grid {
+  .cap-grid {
     grid-template-columns: 1fr;
   }
 
@@ -304,15 +231,15 @@ footer {
   <div class="nav-inner">
     <div class="logo">VectorPoint Capital</div>
     <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Who We Are</a>
-      <a href="#">What We Do</a>
-      <a href="#">Connect</a>
+      <a href="#top">Home</a>
+      <a href="#philosophy">Design</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="connect.html">Connect</a>
     </div>
   </div>
 </nav>
 
-<section class="hero">
+<section id="top" class="hero">
   <div class="hero-inner">
     <div class="hero-label">What We Do</div>
     <div class="hero-title">
@@ -326,7 +253,7 @@ footer {
   </div>
 </section>
 
-<section class="section">
+<section id="philosophy" class="section">
   <div class="section-title">
     <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg>
     Design Philosophy
@@ -339,16 +266,16 @@ footer {
   </div>
 </section>
 
-<section class="section">
+<section id="capabilities" class="section">
   <div class="section-title">
     <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
     Core Capabilities
   </div>
 
   <div class="cap-grid">
-    <div class="cap-card"><div class="cap-title"><svg class="icon" viewBox="0 0 24 24"><path d="M3 12h18"/></svg>Low-Latency Execution</div><div class="cap-text">Optimized routing and colocated engines.</div></div>
-    <div class="cap-card"><div class="cap-title"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2l8 8-8 8-8-8z"/></svg>Resilient Infrastructure</div><div class="cap-text">Redundancy and automated recovery.</div></div>
-    <div class="cap-card"><div class="cap-title"><svg class="icon" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>End-to-End Automation</div><div class="cap-text">Signals through risk enforcement.</div></div>
+    <div class="cap-card"><div class="cap-title">Low-Latency Execution</div><div class="cap-text">Optimized routing and colocated engines.</div></div>
+    <div class="cap-card"><div class="cap-title">Resilient Infrastructure</div><div class="cap-text">Redundancy and automated recovery.</div></div>
+    <div class="cap-card"><div class="cap-title">End-to-End Automation</div><div class="cap-text">Signals through risk enforcement.</div></div>
   </div>
 </section>
 
