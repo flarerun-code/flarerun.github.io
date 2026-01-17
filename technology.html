@@ -66,25 +66,6 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
-.nav-links a {
-  position: relative;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 1px;
-  background: var(--text);
-  transition: width var(--fast) var(--ease);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
 /* ================= HERO ================= */
 
 .hero {
@@ -98,7 +79,7 @@ a { color: inherit; text-decoration: none; }
 .hero-inner {
   max-width: 1120px;
   margin: auto;
-  padding: 6rem 1.5rem 5rem;
+  padding: 5rem 1.5rem 4rem;
 }
 
 .hero-label {
@@ -106,21 +87,21 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.28em;
   text-transform: uppercase;
   opacity: 0.6;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
 }
 
 .hero-title {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   font-weight: 500;
   line-height: 1.25;
   max-width: 780px;
 }
 
 .hero-text {
-  margin-top: 1.6rem;
+  margin-top: 1.4rem;
   max-width: 720px;
   font-size: 0.95rem;
-  line-height: 1.75;
+  line-height: 1.7;
   color: #cfcfcf;
 }
 
@@ -129,7 +110,7 @@ a { color: inherit; text-decoration: none; }
 .section {
   max-width: 1120px;
   margin: auto;
-  padding: 5rem 1.5rem;
+  padding: 3.5rem 1.5rem;
 }
 
 .section-title {
@@ -137,7 +118,21 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* ================= ICON ================= */
+
+.icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  fill: none;
+  opacity: 0.6;
 }
 
 /* ================= PRINCIPLES ================= */
@@ -145,11 +140,11 @@ a { color: inherit; text-decoration: none; }
 .principles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.8rem;
 }
 
 .principle {
-  padding: 2rem;
+  padding: 1.9rem;
   border-radius: 18px;
   background: linear-gradient(180deg, #ffffff, #f3f3f3);
   border: 1px solid var(--border);
@@ -158,17 +153,17 @@ a { color: inherit; text-decoration: none; }
 }
 
 .principle:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.08);
 }
 
 .principle h3 {
-  font-size: 1rem;
-  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
 }
 
 .principle p {
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -178,67 +173,61 @@ a { color: inherit; text-decoration: none; }
 .cap-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.8rem;
 }
 
 .cap-card {
   background: var(--card);
   border-radius: 20px;
-  padding: 2.2rem;
+  padding: 2rem;
   transition: transform var(--fast) var(--ease),
               box-shadow var(--fast) var(--ease);
 }
 
 .cap-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.1);
 }
 
 .cap-title {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .cap-text {
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 /* ================= STACK ================= */
 
 .stack {
   background: var(--panel-soft);
-  border-radius: 28px;
-  padding: 4rem 3rem;
+  border-radius: 26px;
+  padding: 3.2rem 2.8rem;
   color: var(--light);
 }
 
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
-}
-
-.stack-item {
-  padding: 1.2rem;
-  border-radius: 14px;
-  transition: background var(--fast) var(--ease),
-              transform var(--fast) var(--ease);
-}
-
-.stack-item:hover {
-  background: rgba(255,255,255,0.04);
-  transform: translateY(-4px);
+  gap: 2.2rem;
 }
 
 .stack-item h4 {
   font-size: 0.9rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .stack-item p {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #bcbcbc;
   line-height: 1.6;
 }
@@ -248,46 +237,28 @@ a { color: inherit; text-decoration: none; }
 .research-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.8rem;
 }
 
 .research-card {
   background: linear-gradient(180deg, #ffffff, #f4f4f4);
   border-radius: 22px;
-  padding: 2.4rem;
+  padding: 2.2rem;
   border: 1px solid var(--border);
-  transition: transform var(--fast) var(--ease),
-              box-shadow var(--fast) var(--ease);
-}
-
-.research-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.08);
 }
 
 .research-card h3 {
-  font-size: 1rem;
-  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .research-card p {
-  font-size: 0.85rem;
-  line-height: 1.65;
+  font-size: 0.83rem;
+  line-height: 1.6;
   color: var(--muted);
-}
-
-/* ================= REVEAL ================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity var(--slow) var(--ease),
-              transform var(--slow) var(--ease);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ================= FOOTER ================= */
@@ -295,7 +266,7 @@ a { color: inherit; text-decoration: none; }
 footer {
   background: #0f0f0f;
   color: #aaa;
-  padding: 2.5rem 1.5rem;
+  padding: 2.2rem 1.5rem;
 }
 
 .footer-inner {
@@ -303,7 +274,6 @@ footer {
   margin: auto;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   font-size: 0.75rem;
 }
 
@@ -334,16 +304,16 @@ footer {
   <div class="nav-inner">
     <div class="logo">VectorPoint Capital</div>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">Who We Are</a>
-      <a href="technology.html">What We Do</a>
-      <a href="connect.html">Connect</a>
+      <a href="#">Home</a>
+      <a href="#">Who We Are</a>
+      <a href="#">What We Do</a>
+      <a href="#">Connect</a>
     </div>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-inner reveal">
+  <div class="hero-inner">
     <div class="hero-label">What We Do</div>
     <div class="hero-title">
       Engineering the systems that turn data into disciplined decisions.
@@ -357,41 +327,28 @@ footer {
 </section>
 
 <section class="section">
-  <div class="section-title">Design Philosophy</div>
+  <div class="section-title">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg>
+    Design Philosophy
+  </div>
+
   <div class="principles">
-    <div class="principle reveal"><h3>Deterministic by Design</h3><p>Every system behaves predictably across research, simulation, and live markets.</p></div>
-    <div class="principle reveal"><h3>Latency-Aware Architecture</h3><p>Execution paths optimized for market microstructure and timing sensitivity.</p></div>
-    <div class="principle reveal"><h3>Embedded Risk Controls</h3><p>Real-time limits, exposure monitoring, and automated shutdown mechanisms.</p></div>
+    <div class="principle"><h3>Deterministic by Design</h3><p>Predictable behavior across research and live markets.</p></div>
+    <div class="principle"><h3>Latency-Aware Architecture</h3><p>Optimized for market microstructure.</p></div>
+    <div class="principle"><h3>Embedded Risk Controls</h3><p>Real-time limits and automated protection.</p></div>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-title">Core Capabilities</div>
+  <div class="section-title">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
+    Core Capabilities
+  </div>
+
   <div class="cap-grid">
-    <div class="cap-card reveal"><div class="cap-title">Low-Latency Execution</div><div class="cap-text">Colocated engines and optimized order routing.</div></div>
-    <div class="cap-card reveal"><div class="cap-title">Resilient Infrastructure</div><div class="cap-text">Highly available systems with automated recovery.</div></div>
-    <div class="cap-card reveal"><div class="cap-title">End-to-End Automation</div><div class="cap-text">Signals, execution, and risk enforcement.</div></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-title">Platform Stack</div>
-  <div class="stack">
-    <div class="stack-grid">
-      <div class="stack-item reveal"><h4>Research</h4><p>Data pipelines and simulation engines.</p></div>
-      <div class="stack-item reveal"><h4>Execution</h4><p>Low-latency exchange connectivity.</p></div>
-      <div class="stack-item reveal"><h4>Risk</h4><p>Real-time exposure controls.</p></div>
-      <div class="stack-item reveal"><h4>Monitoring</h4><p>System health and alerting.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-title">Deep Research</div>
-  <div class="research-grid">
-    <div class="research-card reveal"><h3>Data Engineering</h3><p>High-frequency and historical ingestion.</p></div>
-    <div class="research-card reveal"><h3>Signal Discovery</h3><p>Persistence and regime analysis.</p></div>
-    <div class="research-card reveal"><h3>Model Validation</h3><p>Backtesting and stress testing.</p></div>
+    <div class="cap-card"><div class="cap-title"><svg class="icon" viewBox="0 0 24 24"><path d="M3 12h18"/></svg>Low-Latency Execution</div><div class="cap-text">Optimized routing and colocated engines.</div></div>
+    <div class="cap-card"><div class="cap-title"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2l8 8-8 8-8-8z"/></svg>Resilient Infrastructure</div><div class="cap-text">Redundancy and automated recovery.</div></div>
+    <div class="cap-card"><div class="cap-title"><svg class="icon" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>End-to-End Automation</div><div class="cap-text">Signals through risk enforcement.</div></div>
   </div>
 </section>
 
@@ -401,21 +358,6 @@ footer {
     <div>Legal · Privacy · Recruiting</div>
   </div>
 </footer>
-
-<script>
-const reveals = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-
-reveals.forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
