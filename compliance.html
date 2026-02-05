@@ -154,6 +154,16 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.5;
 }
 
+.card-text a {
+  color: var(--text);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-text a:hover {
+  border-bottom-color: var(--text);
+}
+
 /* ================= FOOTER ================= */
 
 footer {
@@ -205,7 +215,7 @@ footer {
       <div class="icon">
         <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 9-8 9s-8-4-8-9V7z"/></svg>
       </div>
-      <div class="card-title">Policy 1</div>
+      <div class="card-title">Governance</div>
       <div class="card-text">
         Governance and risk management framework guiding capital deployment
         and trading operations.
@@ -216,7 +226,7 @@ footer {
       <div class="icon">
         <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
       </div>
-      <div class="card-title">Policy 2</div>
+      <div class="card-title">Trading Conduct</div>
       <div class="card-text">
         Trading conduct, surveillance standards, and ethical participation
         across markets.
@@ -227,9 +237,11 @@ footer {
       <div class="icon">
         <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M9 8h6M9 12h6"/></svg>
       </div>
-      <div class="card-title">Policy 3</div>
+      <div class="card-title">Data Protection</div>
       <div class="card-text">
-        Data privacy, confidentiality, and regulatory compliance obligations.
+        <a href="docs/data-protection-policy.pdf" target="_blank">
+          Data Protection & Privacy Policy (PDF)
+        </a>
       </div>
     </div>
   </div>
@@ -245,7 +257,7 @@ footer {
         <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
       </div>
       <div class="card-title">General</div>
-      <div class="card-text">hello@vectorpoint.capital</div>
+      <div class="card-text">hello@arcnine.in</div>
     </div>
 
     <div class="card">
@@ -257,7 +269,7 @@ footer {
       </div>
       <div class="card-title">Registered Address</div>
       <div class="card-text">
-        VectorPoint Capital Markets LLP<br>
+        Arcnine Research LLP<br>
         Jaipur, Rajasthan, India
       </div>
     </div>
@@ -270,7 +282,7 @@ footer {
         </svg>
       </div>
       <div class="card-title">Compliance</div>
-      <div class="card-text">compliance@vectorpoint.capital</div>
+      <div class="card-text">compliance@arcnine.in</div>
     </div>
   </div>
 </section>
