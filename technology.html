@@ -9,8 +9,6 @@
 :root {
   --bg: #ffffff;
   --panel: #0f0f0f;
-  --panel-soft: #161616;
-  --card: #f6f6f6;
   --border: #e0e0e0;
   --text: #111;
   --muted: #777;
@@ -101,88 +99,57 @@ a { color: inherit; text-decoration: none; }
   color: #cfcfcf;
 }
 
-/* ================= SECTION ================= */
+/* ================= SECTIONS ================= */
 
 .section {
   max-width: 1120px;
   margin: auto;
-  padding: 3.5rem 1.5rem;
+  padding: 3.8rem 1.5rem;
 }
 
-.section-title {
-  font-size: 0.75rem;
+.section-header {
+  max-width: 520px;
+  margin-bottom: 2.2rem;
+}
+
+.section-label {
+  font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-/* ================= ICON ================= */
-
-.icon {
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  fill: none;
-  opacity: 0.6;
-}
-
-/* ================= PRINCIPLES ================= */
-
-.principles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.8rem;
-}
-
-.principle {
-  padding: 2rem;
-  border-radius: 18px;
-  background: linear-gradient(180deg, #ffffff, #f3f3f3);
-  border: 1px solid var(--border);
-}
-
-.principle h3 {
-  font-size: 0.95rem;
   margin-bottom: 0.6rem;
 }
 
-.principle p {
-  font-size: 0.83rem;
-  line-height: 1.6;
-  color: var(--muted);
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
-/* ================= CAPABILITIES ================= */
+/* ================= TEXT GRID ================= */
 
-.cap-grid {
+.text-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.8rem;
+  gap: 2.5rem;
 }
 
-.cap-card {
-  background: var(--card);
-  border-radius: 20px;
-  padding: 2.2rem;
-}
-
-.cap-title {
+.text-block h3 {
   font-size: 0.95rem;
-  margin-bottom: 0.6rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
-.cap-text {
+.text-block p {
   font-size: 0.83rem;
+  line-height: 1.65;
   color: var(--muted);
-  line-height: 1.6;
+}
+
+/* ================= DIVIDER ================= */
+
+.divider {
+  border-top: 1px solid var(--border);
+  margin: 3.5rem 0;
 }
 
 /* ================= FOOTER ================= */
@@ -204,8 +171,7 @@ footer {
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
-  .principles,
-  .cap-grid {
+  .text-grid {
     grid-template-columns: 1fr;
   }
 
@@ -241,88 +207,83 @@ footer {
       Building automated systems for disciplined market participation.
     </div>
     <p class="hero-text">
-      Our focus is on designing and operating systematic, research-driven
-      trading infrastructure where data, execution, and risk management
-      operate as a single, controlled system. Every component is built
-      for robustness, repeatability, and long-term stability.
+      Our work centers on designing and operating systematic,
+      research-driven infrastructure where decision-making,
+      execution, and risk controls are integrated into a single,
+      coherent system.
     </p>
   </div>
 </section>
 
 <section class="section">
-  <div class="section-title">
-    <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg>
-    Design Philosophy
+  <div class="section-header">
+    <div class="section-label">Philosophy</div>
+    <div class="section-title">
+      Systems are engineered, not assembled.
+    </div>
   </div>
 
-  <div class="principles">
-    <div class="principle">
-      <h3>System First Thinking</h3>
+  <div class="text-grid">
+    <div class="text-block">
+      <h3>System-First Design</h3>
       <p>
-        Strategies are treated as system components, not standalone ideas.
-        Research, execution, and controls are developed together to avoid
-        hidden dependencies and failure modes.
+        Research, execution, and controls are developed as a unified system.
+        Individual strategies are treated as components rather than isolated ideas.
       </p>
     </div>
 
-    <div class="principle">
+    <div class="text-block">
       <h3>Deterministic Behavior</h3>
       <p>
-        Every process is engineered to behave predictably across environments,
-        enabling accurate backtesting, controlled deployment, and reliable
-        live performance.
+        Infrastructure is built to behave predictably across environments,
+        enabling reliable backtesting, controlled deployment, and stable operation.
       </p>
     </div>
 
-    <div class="principle">
-      <h3>Embedded Risk Governance</h3>
+    <div class="text-block">
+      <h3>Embedded Governance</h3>
       <p>
-        Risk constraints are enforced at the infrastructure level through
-        pre-trade checks, exposure limits, and automated safeguards.
+        Risk constraints, limits, and safeguards are enforced at the system level,
+        not as discretionary overlays.
       </p>
     </div>
   </div>
 </section>
 
+<div class="divider"></div>
+
 <section class="section">
-  <div class="section-title">
-    <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
-    Core Capabilities
+  <div class="section-header">
+    <div class="section-label">Capabilities</div>
+    <div class="section-title">
+      End-to-end infrastructure built for control and repeatability.
+    </div>
   </div>
 
-  <div class="cap-grid">
-    <div class="cap-card">
-      <div class="cap-title">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M3 12h18"/></svg>
-        Research & Model Development
-      </div>
-      <div class="cap-text">
+  <div class="text-grid">
+    <div class="text-block">
+      <h3>Research & Validation</h3>
+      <p>
         Structured research workflows with rigorous backtesting,
-        controlled validation, and versioned deployment of models.
-      </div>
+        controlled validation, and disciplined transition from
+        research to live environments.
+      </p>
     </div>
 
-    <div class="cap-card">
-      <div class="cap-title">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2l8 8-8 8-8-8z"/></svg>
-        Automated Execution Infrastructure
-      </div>
-      <div class="cap-text">
-        Fully automated execution pipelines designed for consistency,
-        fault tolerance, and operational resilience under varying
-        market conditions.
-      </div>
+    <div class="text-block">
+      <h3>Automated Execution</h3>
+      <p>
+        Fully automated execution pipelines designed to operate
+        consistently under varying conditions, with minimal manual intervention.
+      </p>
     </div>
 
-    <div class="cap-card">
-      <div class="cap-title">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>
-        Monitoring & Control Systems
-      </div>
-      <div class="cap-text">
-        Real-time monitoring, auditability, and system-level controls
-        that support disciplined operation and post-event analysis.
-      </div>
+    <div class="text-block">
+      <h3>Monitoring & Oversight</h3>
+      <p>
+        Continuous monitoring, auditability, and post-event analysis
+        to support operational discipline and system integrity.
+      </p>
     </div>
   </div>
 </section>
