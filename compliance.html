@@ -61,7 +61,11 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
-.nav-links a:hover { color: var(--text); }
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  font-weight: 500;
+}
 
 /* ================= HERO ================= */
 
@@ -193,7 +197,7 @@ footer {
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="technology.html">Our Focus</a>
-      <a href="connect.html">Compliance</a>
+      <a href="compliance.html" class="active">Compliance</a>
     </div>
   </div>
 </nav>
@@ -212,6 +216,7 @@ footer {
 
   <div class="grid">
 
+    <!-- Privacy -->
     <div class="card">
       <div class="icon">
         <svg viewBox="0 0 24 24">
@@ -226,6 +231,7 @@ footer {
       </div>
     </div>
 
+    <!-- Proprietary Trading -->
     <div class="card">
       <div class="icon">
         <svg viewBox="0 0 24 24">
@@ -241,11 +247,15 @@ footer {
       </div>
     </div>
 
+    <!-- NON-ADVISORY — UPDATED ICON -->
     <div class="card">
       <div class="icon">
         <svg viewBox="0 0 24 24">
-          <path d="M3 12h18"/>
-          <path d="M12 3v18"/>
+          <!-- user -->
+          <circle cx="12" cy="8" r="3"/>
+          <path d="M5 20c0-4 14-4 14 0"/>
+          <!-- prohibition slash -->
+          <path d="M3 3l18 18"/>
         </svg>
       </div>
       <div class="card-title">Non-Advisory & No Client Interaction Policy</div>
