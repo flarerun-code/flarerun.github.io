@@ -94,10 +94,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
-/* ========================= */
-/* STATIC 3D RUBIK'S CUBE */
-/* ========================= */
-
+/* STATIC 3D CUBE */
 .cube-scene {
   position: absolute;
   top: 5.5rem;
@@ -132,15 +129,6 @@ a { color: inherit; text-decoration: none; }
   background: #ffffff;
   border: 1px solid #d6d6d6;
   border-radius: 3px;
-}
-
-.face.back span,
-.face.left span {
-  background: #f1f1f1;
-}
-
-.face.bottom span {
-  background: #ededed;
 }
 
 .face.front  { transform: translateZ(70px); }
@@ -231,14 +219,14 @@ footer {
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
-      <a href="technology.html">What We Do</a>
-      <a href="connect.html">Compliance</a>
+      <a href="technology.html">Our Focus</a>
+      <a href="compliance.html">Compliance</a>
     </div>
   </div>
 </nav>
 
 <section class="section hero">
-  <h1>Research‑driven systems built on data, structure, and risk control.</h1>
+  <h1>Research-driven systems built on data, structure, and risk control.</h1>
   <p>
     Arcnine Research is a quantitative trading firm dedicated to
     research, adaptive modeling, and disciplined risk management.
@@ -248,36 +236,12 @@ footer {
 
   <div class="cube-scene">
     <div class="cube">
-      <div class="face front">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-      <div class="face back">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-      <div class="face right">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-      <div class="face left">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-      <div class="face top">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-      <div class="face bottom">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
+      <div class="face front"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="face back"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="face right"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="face left"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="face top"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="face bottom"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
     </div>
   </div>
 </section>
@@ -317,5 +281,3 @@ footer {
 
 </body>
 </html>
-
-
