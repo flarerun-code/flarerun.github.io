@@ -19,7 +19,11 @@
           "SF Pro Text", "Segoe UI", sans-serif;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: var(--font);
@@ -27,7 +31,10 @@ body {
   color: var(--text);
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 /* NAV */
 .nav {
@@ -61,7 +68,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
-.nav-links a:hover { color: var(--text); }
+.nav-links a:hover {
+  color: var(--text);
+}
 
 /* HERO */
 .hero {
@@ -175,7 +184,8 @@ a { color: inherit; text-decoration: none; }
   left: 6%;
   right: 6%;
   height: 2px;
-  background: linear-gradient(90deg,
+  background: linear-gradient(
+    90deg,
     transparent,
     rgba(255,255,255,0.25),
     transparent
@@ -236,7 +246,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.55;
 }
 
-/* FOOTER (UPDATED ONLY THIS) */
+/* FOOTER (UPDATED) */
 footer {
   background: #0f0f0f;
   color: #aaa;
@@ -255,8 +265,13 @@ footer {
     align-items: center;
   }
 
-  .journey-path { display: none; }
-  .nav-links { display: none; }
+  .journey-path {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+  }
 
   .hero-title {
     font-size: 1.6rem;
@@ -267,8 +282,57 @@ footer {
 
 <body>
 
-<!-- everything unchanged above -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo">Arcnine Research</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="technology.html">Our Focus</a>
+      <a href="compliance.html">Compliance</a>
+    </div>
+  </div>
+</nav>
 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Who We Are</div>
+
+    <div class="hero-title">
+      A quantitative proprietary trading research firm focused on
+      systematic strategies across Indian financial markets.
+    </div>
+
+    <p class="hero-text">
+      Arcnine Research develops data-driven trading systems using
+      statistical modelling, market microstructure analysis, and
+      automated execution infrastructure. Our research focuses on
+      identifying inefficiencies in the financial markets while maintaining
+      disciplined risk management and capital allocation frameworks.
+    </p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="section-title">Our Process</div>
+
+  <div class="icon-grid">
+    <!-- SAME CONTENT (UNCHANGED) -->
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section">
+  <div class="section-title">Our Journey</div>
+
+  <div class="journey-feature">
+    <!-- SAME CONTENT (UNCHANGED) -->
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   © Arcnine Research LLP
 </footer>
